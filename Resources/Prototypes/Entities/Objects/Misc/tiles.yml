@@ -45,7 +45,7 @@
         Blunt: 5
 
 - type: entity
-  name: steel tile
+  name: regolith tile
   parent: FloorTileItemBase
   id: FloorTileItemSteel
   components:
@@ -64,7 +64,7 @@
     node: steeltile
 
 - type: entity
-  name: steel dark checker tile
+  name: regolith dark checker tile
   parent: FloorTileItemSteel
   id: FloorTileItemSteelCheckerDark
   components:
@@ -76,7 +76,7 @@
       - FloorSteelCheckerDark
 
 - type: entity
-  name: steel light checker tile
+  name: regolith light checker tile
   parent: FloorTileItemSteel
   id: FloorTileItemSteelCheckerLight
   components:
@@ -88,7 +88,7 @@
       - FloorSteelCheckerLight
 
 - type: entity
-  name: steel tile
+  name: regolith tile
   parent: FloorTileItemBase
   id: FloorTileItemMetalDiamond
   components:
@@ -914,7 +914,7 @@
     node: fleshTile
 
 - type: entity
-  name: steel maint floor
+  name: regolith maint floor
   parent: FloorTileItemBase
   id: FloorTileItemSteelMaint
   components:

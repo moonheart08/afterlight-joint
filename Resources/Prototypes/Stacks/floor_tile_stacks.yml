@@ -1,13 +1,13 @@
 ﻿- type: stack
   id: FloorTileSteel
-  name: steel tile
+  name: regolith tile
   spawn: FloorTileItemSteel
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorTileMetalDiamond
-  name: steel tile
+  name: regolith tile
   spawn: FloorTileItemMetalDiamond
   maxCount: 30
   itemSize: 5
@@ -406,7 +406,7 @@
 
 - type: stack
   id: FloorTileSteelMaint
-  name: steel maint floor
+  name: regolith maint floor
   spawn: FloorTileItemSteelMaint
   maxCount: 30
   itemSize: 5
