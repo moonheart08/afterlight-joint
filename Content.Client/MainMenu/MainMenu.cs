@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using Content.Client._AL.UI.Windows;
 using Content.Client.MainMenu.UI;
 using Content.Client.UserInterface.Systems.EscapeMenu;
 using Robust.Client;
@@ -45,6 +46,8 @@ namespace Content.Client.MainMenu
             _mainMenuControl.ChangelogButton.OnPressed += ChangelogButtonPressed;
 
             _client.RunLevelChanged += RunLevelChanged;
+
+
         }
 
         /// <inheritdoc />
@@ -58,7 +61,8 @@ namespace Content.Client.MainMenu
 
         private void ChangelogButtonPressed(BaseButton.ButtonEventArgs args)
         {
-            _userInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();
+            new ALZoo().OpenCentered();
+            //_userInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();
         }
 
         private void OptionsButtonPressed(BaseButton.ButtonEventArgs args)

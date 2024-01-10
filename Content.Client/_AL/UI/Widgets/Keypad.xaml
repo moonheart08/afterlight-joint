@@ -1,0 +1,16 @@
+﻿<Keypad xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+        Columns="3"
+        Rows="4">
+    <Button Name="B1" Text="1"/>
+    <Button Name="B4" Text="4"/>
+    <Button Name="B7" Text="7"/>
+    <Button Name="BClr" Text="Clr"/>
+    <Button Name="B2" Text="2"/>
+    <Button Name="B5" Text="5"/>
+    <Button Name="B8" Text="8"/>
+    <Button Name="B0" Text="0"/>
+    <Button Name="B3" Text="3"/>
+    <Button Name="B6" Text="6"/>
+    <Button Name="B9" Text="9"/>
+    <Button Name="BE" Text="E"/>
+</Keypad>

@@ -1,3 +1,4 @@
+using Content.Client._AL.UI;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Shared.IoC;
@@ -14,10 +15,14 @@ namespace Content.Client.Stylesheets
 
         public void Initialize()
         {
+            /*
             SheetNano = new StyleNano(_resourceCache).Stylesheet;
             SheetSpace = new StyleSpace(_resourceCache).Stylesheet;
 
             _userInterfaceManager.Stylesheet = SheetNano;
+            */ // AL EDIT: FUCK THIS LOL!
+
+            _userInterfaceManager.Stylesheet = new ALStyle(_resourceCache).Stylesheet;
         }
     }
 }
