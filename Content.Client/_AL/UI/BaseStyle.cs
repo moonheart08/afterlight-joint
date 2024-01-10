@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Client._AL.UI.Sheets;
 using Content.Client._AL.UI.Styleboxes;
 using Content.Client._AL.UI.Widgets;
 using Content.Client.Resources;
@@ -8,6 +9,9 @@ using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Client.UserInterface.CustomControls;
+using Robust.Shared.Reflection;
+using Robust.Shared.Sandboxing;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 using static Content.Client._AL.UI.ALStylesheetHelpers;
 
@@ -15,7 +19,11 @@ namespace Content.Client._AL.UI;
 
 public abstract class BaseStyle
 {
-    protected abstract string FileRoot { get; }
+    [Dependency] public readonly IUserInterfaceManager UserInterface = default!;
+    [Dependency] public readonly IReflectionManager Reflection = default!;
+    [Dependency] public readonly ISandboxHelper SandboxHelper = default!;
+
+    public abstract string FileRoot { get; }
     /// <summary>
     ///     A five color, intense palette used for primary colors.
     /// </summary>
@@ -25,13 +33,17 @@ public abstract class BaseStyle
     /// </summary>
     public abstract Color[] SecondaryPalette { get; }
 
-    private readonly IResourceCache _resourceCache;
+    public readonly IResourceCache ResourceCache;
 
     #region Textures
     public Texture[] PanelBackgroundTextures;
     public StyleBox[] PanelBackgrounds;
     public Texture[] ButtonBackgroundTextures;
     public StyleBox[] ButtonBackgrounds;
+    public Texture[] ButtonPositiveBackgroundTextures;
+    public StyleBox[] ButtonPositiveBackgrounds;
+    public Texture[] ButtonNegativeBackgroundTextures;
+    public StyleBox[] ButtonNegativeBackgrounds;
 
     public StyleBox[] PrimarySolidBackgrounds;
     public StyleBox[] SecondarySolidBackgrounds;
@@ -50,7 +62,8 @@ public abstract class BaseStyle
     [SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
     public BaseStyle(IResourceCache resCache)
     {
-        _resourceCache = resCache;
+        IoCManager.InjectDependencies(this);
+        ResourceCache = resCache;
         /* Panel textures */
         PrimarySolidBackgrounds = PrimaryPalette.Select(x => (StyleBox)new StyleBoxFlat(x)).ToArray();
         SecondarySolidBackgrounds = SecondaryPalette.Select(x => (StyleBox)new StyleBoxFlat(x)).ToArray();
@@ -58,9 +71,12 @@ public abstract class BaseStyle
             = LoadIndefiniteNinePatchSet($"{FileRoot}/panel_bg_{{0}}.png", PanelMargin);
         (ButtonBackgroundTextures, ButtonBackgrounds, _)
             = LoadIndefiniteNinePatchSet($"{FileRoot}/button_bg_{{0}}.png", PanelMargin);
+        (ButtonPositiveBackgroundTextures, ButtonPositiveBackgrounds, _)
+            = LoadIndefiniteNinePatchSet($"{FileRoot}/button_positive_bg_{{0}}.png", PanelMargin);
+        (ButtonNegativeBackgroundTextures, ButtonNegativeBackgrounds, _)
+            = LoadIndefiniteNinePatchSet($"{FileRoot}/button_negative_bg_{{0}}.png", PanelMargin);
 
-        /* Slider textures */
-        var sliderBackBox =
+
 
         BaseRules = new StyleRule[]
         {
@@ -69,15 +85,11 @@ public abstract class BaseStyle
             Element().Prop(StyleSelectors.SecondaryPalette, SecondaryPalette),
 
             /* TEXT AND FONTS */
-            Element().Prop(StyleSelectors.Font, Font.GetFont(_resourceCache, BaseFontSize)),
+            Element().Prop(StyleSelectors.Font, Font.GetFont(ResourceCache, BaseFontSize)),
+            Element().Class(StyleSelectors.Bold)
+                .Prop(StyleSelectors.Font, Font.GetFont(ResourceCache, BaseFontSize, FontStack.FontKind.Bold)),
             Element().Prop(StyleSelectors.FontColor, SecondaryPalette[0]),
             Element().Prop(StyleSelectors.FontColorLightBg, SecondaryPalette[4]),
-
-            /* BUTTONS */
-            Button().Normal().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[2]),
-            Button().Hover().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[3]),
-            Button().Pressed().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[1]),
-            Button().Disabled().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[0]),
 
             /* Horizontal and vertical bars */
             Element<HBar>().Prop(StyleSelectors.StyleBox, SecondarySolidBackgrounds[0]),
@@ -88,46 +100,83 @@ public abstract class BaseStyle
                 .Prop(Slider.StylePropertyForeground, LoadTexture($"{FileRoot}/slider_outline.png").ToPatchStyleBox(14).Modulate(SecondaryPalette[4]))
                 .Prop(Slider.StylePropertyGrabber, LoadTexture($"{FileRoot}/slider_grabber.png").ToPatchStyleBox(14).Zoom(2))
                 .Prop(Slider.StylePropertyFill, LoadTexture($"{FileRoot}/slider_fill.png").ToPatchStyleBox(14).Modulate(PrimaryPalette[1])),
-        };
+        }
+            // Load all the stylesheet pieces.
+            .Concat(GetRulesFromAttribute<StylesheetAttribute>()).ToArray();
     }
 
 
 
     #region Texture loading utilities
 
-    protected Texture LoadTexture(string target)
+    public Texture LoadTexture(string target)
     {
-        return _resourceCache.GetTexture(target);
+        return ResourceCache.GetTexture(target);
     }
 
-    protected Texture[] LoadTextureSet(string target, int amount)
+    public Texture[] LoadTextureSet(string target, int amount)
     {
         var tx = new Texture[amount];
         for (var i = 0; i < amount; i++)
         {
-            tx[i] = _resourceCache.GetTexture(string.Format(target, i));
+            tx[i] = ResourceCache.GetTexture(string.Format(target, i));
         }
 
         return tx;
     }
 
-    protected (Texture[] textures, int found) LoadIndefiniteTextureSet(string target)
+    public (Texture[] textures, int found) LoadIndefiniteTextureSet(string target)
     {
         var tx = new List<Texture>();
         var i = 0;
-        while (_resourceCache.ContentFileExists(string.Format(target, i)))
+        while (ResourceCache.ContentFileExists(string.Format(target, i)))
         {
-            tx.Add(_resourceCache.GetTexture(string.Format(target, i)));
+            tx.Add(ResourceCache.GetTexture(string.Format(target, i)));
             i++;
         }
 
         return (tx.ToArray(), i);
     }
 
-    protected (Texture[] textures, StyleBox[] boxes, int found) LoadIndefiniteNinePatchSet(string target, int margin)
+    public (Texture[] textures, StyleBox[] boxes, int found) LoadIndefiniteNinePatchSet(string target, int margin)
     {
         var (textures, found) = LoadIndefiniteTextureSet(target);
         return (textures, textures.ToPatchStyleBoxes(margin), found);
+    }
+    #endregion
+
+    #region Subsheets
+
+    public List<BaseSubsheet> GetFromAttribute<T>()
+        where T: Attribute
+    {
+        var tys = Reflection.FindTypesWithAttribute<T>();
+        var outp = new List<BaseSubsheet>();
+
+        foreach (var t in tys)
+        {
+            var value = (BaseSubsheet) SandboxHelper.CreateInstance(t);
+            outp.Add(value);
+        }
+
+        return outp;
+    }
+
+    public StyleRule[] GetRules(List<BaseSubsheet> sheets)
+    {
+        var outp = new List<StyleRule>();
+        foreach (var sheet in sheets)
+        {
+            outp.AddRange(sheet.GetRules(this));
+        }
+
+        return outp.ToArray();
+    }
+
+    public StyleRule[] GetRulesFromAttribute<T>()
+        where T: Attribute
+    {
+        return GetRules(GetFromAttribute<T>());
     }
     #endregion
 

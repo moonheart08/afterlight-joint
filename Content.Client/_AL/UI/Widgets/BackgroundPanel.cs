@@ -32,7 +32,7 @@ public class BackgroundPanel : PanelContainer, IDepthMeasure<BackgroundPanel>, I
         ((IDepthMeasure<BackgroundPanel>)this).CheckChanges(this);
     }
 
-    public void OnDepthUpdate(int n)
+    public virtual void OnDepthUpdate(int n)
     {
         if (TryGetStyleProperty(StyleSelectors.BackgroundPanelStyleboxes, out StyleBox[]? boxes))
         {
@@ -52,7 +52,7 @@ public class BackgroundPanel : PanelContainer, IDepthMeasure<BackgroundPanel>, I
 
 public sealed class VBackgroundPanel : BackgroundPanel
 {
-    public readonly Box Inner = new() { Orientation = BoxContainer.LayoutOrientation.Vertical, Margin = new Thickness(4)};
+    public readonly Stack Inner = new() { Orientation = BoxContainer.LayoutOrientation.Vertical, Margin = new Thickness(4)};
 
     public VBackgroundPanel()
     {
@@ -64,7 +64,7 @@ public sealed class VBackgroundPanel : BackgroundPanel
 
 public sealed class HBackgroundPanel : BackgroundPanel
 {
-    public readonly Box Inner = new() { Orientation = BoxContainer.LayoutOrientation.Vertical, Margin = new Thickness(4)};
+    public readonly Stack Inner = new() { Orientation = BoxContainer.LayoutOrientation.Vertical, Margin = new Thickness(4)};
 
     public HBackgroundPanel()
     {

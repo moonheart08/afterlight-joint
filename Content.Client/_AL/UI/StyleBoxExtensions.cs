@@ -31,18 +31,7 @@ public static class StyleBoxExtensions
     public static StyleboxExtruded Extrude(this StyleBox box, Vector2 by, StyleBox? extrusion = default)
     {
         var b = new StyleboxExtruded(box, by, extrusion);
-        var left = by.X < 0 ? float.Abs(by.X) : 0.0f;
-        var right = by.X > 0 ? float.Abs(by.X) : 0.0f;
-        var top = by.Y > 0 ? float.Abs(by.Y) : 0.0f;
-        var bottom = by.Y < 0 ? float.Abs(by.Y) : 0.0f;
-        if (left != 0.0f)
-            b.SetContentMarginOverride(StyleBox.Margin.Left, left);
-        if (right != 0.0f)
-            b.SetContentMarginOverride(StyleBox.Margin.Right, right);
-        if (top != 0.0f)
-            b.SetContentMarginOverride(StyleBox.Margin.Top, top);
-        if (bottom != 0.0f)
-            b.SetContentMarginOverride(StyleBox.Margin.Bottom, bottom);
+
         return b;
     }
 

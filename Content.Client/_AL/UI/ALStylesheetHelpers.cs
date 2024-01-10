@@ -18,6 +18,16 @@ public static class ALStylesheetHelpers
         return e;
     }
 
+    public static MutableSelectorElement Positive(this MutableSelectorElement i)
+    {
+        return i.Class(StyleSelectors.Positive);
+    }
+
+    public static MutableSelectorElement Negative(this MutableSelectorElement i)
+    {
+        return i.Class(StyleSelectors.Negative);
+    }
+
     public static MutableSelectorElement Normal(this MutableSelectorElement i)
     {
         return i.Pseudo(ContainerButton.StylePseudoClassNormal);

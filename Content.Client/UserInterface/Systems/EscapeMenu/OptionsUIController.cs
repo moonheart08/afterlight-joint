@@ -1,3 +1,4 @@
+using Content.Client._AL.UI.Windows.OptionsMenu;
 using Content.Client.Options.UI;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controllers;
@@ -30,24 +31,24 @@ public sealed class OptionsUIController : UIController
             return;
         }
 
-        _optionsWindow.Tabs.CurrentTab = tab;
+        //_optionsWindow.Tabs.CurrentTab = tab;
     }
 
-    private OptionsMenu _optionsWindow = default!;
+    private OptionsMenuWindow _optionsWindow = default!;
 
     private void EnsureWindow()
     {
         if (_optionsWindow is { Disposed: false })
             return;
 
-        _optionsWindow = UIManager.CreateWindow<OptionsMenu>();
+        _optionsWindow = UIManager.CreateWindow<OptionsMenuWindow>();
     }
 
     public void OpenWindow()
     {
         EnsureWindow();
 
-        _optionsWindow.UpdateTabs();
+        //_optionsWindow.UpdateTabs();
 
         _optionsWindow.OpenCentered();
         _optionsWindow.MoveToFront();

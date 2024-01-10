@@ -29,7 +29,7 @@ public sealed class StyleboxExtruded : StyleBox, IBrightnessAware
     {
         var oldXform = handle.GetTransform();
         var old = handle.Modulate;
-        handle.Modulate = Color.LightGray;
+        handle.Modulate = Color.DarkGray;
         (Extrusion ?? Base).Draw(handle, box, uiScale);
         handle.Modulate = old;
         var offs = Matrix3.CreateTranslation((-Offset) * uiScale);

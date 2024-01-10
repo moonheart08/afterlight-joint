@@ -2,26 +2,23 @@
         xmlns:rt="https://spacestation14.io"
         xmlns:windows="clr-namespace:Content.Client._AL.UI.Windows"
         Title="AL Control Zoo">
-    <Box Orientation="Vertical" VerticalExpand="True">
-        <Text Text="One!"/>
-        <VBackgroundPanel VerticalExpand="True">
-            <Text Text="Two!"/>
-            <Box Orientation="Horizontal">
-                <VBackgroundPanel VerticalExpand="True">
-                    <Text Text="Three!"/>
-                    <Box Orientation="Horizontal">
-                        <Button Text="Click me!"/>
-                        <Button Disabled="True" Text="Click me!"/>
-                    </Box>
-                    <VBackgroundPanel VerticalExpand="True">
-                        <Text Text="Four!"/>
-                        <HBar/>
-                        <RichText Text="Man this looks pretty decent already. Amazing! Simple richtext is also a thing." MaxWidth="200"/>
-                    </VBackgroundPanel>
-                </VBackgroundPanel>
-                <Keypad/>
-            </Box>
-            <rt:Slider/>
-        </VBackgroundPanel>
-    </Box>
+    <VGrowStack>
+        <HStack>
+            <VBackgroundPanel VerticalExpand="True">
+                <Text Text="Three!"/>
+                <HStack>
+                    <Button Text="Click me!"/>
+                    <Button Disabled="True" Text="Click me!"/>
+                </HStack>
+
+                <InfoBox Header="Info!" MaxWidth="200">
+                    <RichText Text="Something to see here, probably! This is an InfoBox control. For Info. Right?"/>
+                </InfoBox>
+            </VBackgroundPanel>
+            <Keypad/>
+        </HStack>
+        <rt:Slider Value="25"/>
+        <rt:Slider Value="50"/>
+        <rt:Slider Value="75"/>
+    </VGrowStack>
 </windows:ALZoo>

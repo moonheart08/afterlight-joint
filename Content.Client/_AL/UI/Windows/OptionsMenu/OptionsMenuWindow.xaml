@@ -1,0 +1,24 @@
+﻿<optionsMenu:OptionsMenuWindow xmlns:optionsMenu="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu"
+                               xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                               MinHeight="500"
+                               MinWidth="700"
+                               Title="Options">
+    <HStack>
+        <RadioGroup>
+            <VBackgroundPanel>
+                <RadioLabelButton Text="Graphics"/>
+                <RadioLabelButton Text="UI"/>
+                <RadioLabelButton Text="Audio"/>
+                <RadioLabelButton Text="Network"/>
+                <RadioLabelButton Text="Keybinds"/>
+                <RadioLabelButton Text="Misc"/>
+                <VFill/>
+                <RadioLabelButton Text="Credits"/>
+            </VBackgroundPanel>
+        </RadioGroup>
+        <VBar/>
+        <VStack>
+
+        </VStack>
+    </HStack>
+</optionsMenu:OptionsMenuWindow>

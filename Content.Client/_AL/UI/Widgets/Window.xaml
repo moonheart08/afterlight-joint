@@ -2,19 +2,18 @@
                                xmlns:al="clr-namespace:Content.Client._AL.UI.Widgets"
                                MouseFilter="Stop"
             MinWidth="200" MinHeight="150">
-    <PanelContainer StyleClasses="AngleRect" />
+    <PanelContainer StyleClasses="WindowBackground" />
 
     <BoxContainer Orientation="Vertical">
         <Control>
             <PanelContainer StyleClasses="WindowHeadingBackground" />
-            <BoxContainer Margin="4 2 8 0" Orientation="Horizontal">
+            <BoxContainer Margin="8 2 8 0" Orientation="Horizontal">
                 <Label Name="WindowTitle"
                        HorizontalExpand="True" VAlign="Center" StyleClasses="FancyWindowTitle" />
                 <TextureButton Name="CloseButton" StyleClasses="windowCloseButton"
                                VerticalAlignment="Center" />
             </BoxContainer>
         </Control>
-        <PanelContainer StyleClasses="LowDivider" />
-        <al:BackgroundPanel Access="Public" Name="ContentsContainer" Margin="0 2" RectClipContent="True" VerticalExpand="true"/>
+        <PanelContainer StyleClasses="WindowContentsBackground" Access="Public" Name="ContentsContainer" Margin="0 2 0 -2" VerticalExpand="true"/>
     </BoxContainer>
 </al:Window>

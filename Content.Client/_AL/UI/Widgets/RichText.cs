@@ -37,7 +37,11 @@ public sealed class RichText : RichTextLabel
 
     public string Text
     {
-        set => FormattedText = FormattedMessage.FromMarkup(value);
+        set
+        {
+            FormattedText = FormattedMessage.FromMarkup(value);
+            Update();
+        }
     }
 
     public Type[]? TagsAllowed = null;
@@ -62,6 +66,13 @@ public sealed class RichText : RichTextLabel
             if (FormattedText is not null)
                 SetMessage(FormattedText, tagsAllowed: TagsAllowed, defaultColor: color);
         }
+        else if (TryGetStyleProperty(StyleSelectors.FontColor, out Color c))
+        {
+            if (FormattedText is not null)
+                SetMessage(FormattedText, tagsAllowed: TagsAllowed, defaultColor: c);
+        }
+
+
     }
 
 
