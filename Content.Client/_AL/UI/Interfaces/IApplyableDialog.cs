@@ -2,7 +2,9 @@
 
 public interface IApplyableDialog
 {
-    public abstract bool Modified { get; }
+    public event Action? OnModified;
+
+    public void RegisterOption(IDialogOption option);
 
     public abstract void Apply();
 }

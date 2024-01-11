@@ -17,4 +17,33 @@ public static class ControlUtils
                 return impl;
         }
     }
+
+    public static string? TryGetLocKey(this Control self)
+    {
+        if (self.Name is null)
+            return null;
+        foreach (var ctrl in self.GetSelfAndLogicalAncestors())
+        {
+            if (ctrl.NameScope is not null)
+            {
+                return $"ui-{ctrl.GetType()}-{self.Name}";
+            }
+        }
+
+        return null;
+    }
+
+    public static string? TryGetLocString(this Control self, ILocalizationManager manager, string? parameter = null)
+    {
+        if (TryGetLocKey(self) is not { } key)
+            return null;
+
+        if (parameter is not null && manager.TryGetString($"{key}-{parameter}", out var res))
+        {
+            return res;
+        }
+
+        manager.TryGetString(key, out var res2);
+        return res2;
+    }
 }

@@ -1,0 +1,5 @@
+﻿<tabs:ALNetworkTab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
+                   xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                   HorizontalExpand="True">
+    <RichText Text="The   r e s eeeeeeeeeeeeeeeeeeeeeeeems to be a lot of packe" />
+</tabs:ALNetworkTab>

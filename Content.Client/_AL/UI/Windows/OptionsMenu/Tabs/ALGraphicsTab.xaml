@@ -1,0 +1,12 @@
+﻿<tabs:ALGraphicsTab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
+                    xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                    HorizontalExpand="True">
+    <HStack>
+        <VGrowStack>
+            <Text Text="UI Scale"/>
+        </VGrowStack>
+        <VGrowStack>
+
+        </VGrowStack>
+    </HStack>
+</tabs:ALGraphicsTab>

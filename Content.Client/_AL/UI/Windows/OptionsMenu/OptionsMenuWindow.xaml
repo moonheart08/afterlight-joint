@@ -1,24 +1,41 @@
 ﻿<optionsMenu:OptionsMenuWindow xmlns:optionsMenu="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu"
                                xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                               xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
+                               xmlns:decorative="clr-namespace:Content.Client._AL.UI.Widgets.Decorative"
+                               xmlns:smart="clr-namespace:Content.Client._AL.UI.Widgets.Smart"
                                MinHeight="500"
                                MinWidth="700"
                                Title="Options">
     <HStack>
-        <RadioGroup>
+        <RadioGroup Name="TabSelect">
             <VBackgroundPanel>
-                <RadioLabelButton Text="Graphics"/>
-                <RadioLabelButton Text="UI"/>
-                <RadioLabelButton Text="Audio"/>
-                <RadioLabelButton Text="Network"/>
-                <RadioLabelButton Text="Keybinds"/>
-                <RadioLabelButton Text="Misc"/>
-                <VFill/>
-                <RadioLabelButton Text="Credits"/>
+                <RadioLabelButton Name="Graphics"/>
+                <RadioLabelButton Name="UI"/>
+                <RadioLabelButton Name="Audio"/>
+                <RadioLabelButton Name="Network"/>
+                <RadioLabelButton Name="Keybinds"/>
+                <RadioLabelButton Name="Misc"/>
+                <VGrowStack Margin="0">
+                    <decorative:BarPatch Count="28"/>
+                </VGrowStack>
+                <RadioLabelButton Name="Credits"/>
             </VBackgroundPanel>
         </RadioGroup>
         <VBar/>
-        <VStack>
-
+        <VStack HorizontalExpand="True">
+            <ElementSet Name="Panes" ControlledByGroup="TabSelect" HorizontalExpand="True" VerticalExpand="True">
+                <tabs:ALGraphicsTab/>
+                <tabs:ALUITab/>
+                <tabs:ALAudioTab/>
+                <tabs:ALNetworkTab/>
+                <tabs:ALKeybindsTab/>
+                <tabs:ALMiscTab/>
+                <tabs:ALCreditsTab/>
+            </ElementSet>
+            <HGrowStack>
+                <HFill/>
+                <smart:ApplyButton/>
+            </HGrowStack>
         </VStack>
     </HStack>
 </optionsMenu:OptionsMenuWindow>

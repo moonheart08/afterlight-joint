@@ -215,7 +215,7 @@ public static class StyleExtensions
 
     public static StyleBox Zoom(this StyleBox box, float amount)
     {
-        return new StyleBoxZoomed(box, amount);
+        return new StyleBoxScaled(box, amount);
     }
 
     public static StyleBox[] ToPatchStyleBoxes(this Texture[] textures, int margin)

@@ -2,6 +2,6 @@
 
 public interface IDialogOption
 {
-    
+    public event Action? OnModified;
 }
 

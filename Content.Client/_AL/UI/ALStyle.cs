@@ -47,6 +47,7 @@ public sealed class ALStyle : BaseStyle
             Element().Class(StyleSelectors.WindowBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[2]),
             Element().Class(StyleSelectors.WindowContentsBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[0].Extrude(WindowExtrusion)),
 
+            /* AL's button overrides. This just extrudes them out. */
             Button().Normal().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[2].Extrude(ButtonExtrusion)),
             Button().Hover().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[3].Extrude(ButtonExtrusionPartial)),
             Button().Pressed().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[1]),
@@ -61,7 +62,7 @@ public sealed class ALStyle : BaseStyle
             Button().Negative().Hover().Prop(StyleSelectors.StyleBox, ButtonNegativeBackgrounds[3].Extrude(ButtonExtrusionPartial)),
             Button().Negative().Pressed().Prop(StyleSelectors.StyleBox, ButtonNegativeBackgrounds[1]),
             Button().Negative().Disabled().Prop(StyleSelectors.StyleBox, ButtonNegativeBackgrounds[0].Extrude(ButtonExtrusion)),
-            Element<HBar>().Prop(StyleSelectors.BarStyleboxes, SecondarySolidBackgrounds[1..4].ToArray()),
+            Element<HBar>().Prop(StyleSelectors.BarStyleboxes, SecondarySolidBackgrounds[0..4].ToArray()),
 
             /* Sliders */
             Element<Slider>()

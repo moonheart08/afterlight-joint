@@ -1,0 +1,5 @@
+﻿<tabs:ALAudioTab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
+                 xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                 HorizontalExpand="True">
+    <RichText Text="The game will use this tab to blow out your eardrums." />
+</tabs:ALAudioTab>

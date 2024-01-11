@@ -1,0 +1,5 @@
+﻿<tabs:ALMiscTab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
+                xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                HorizontalExpand="True">
+    <RichText Text="There's nothing here." />
+</tabs:ALMiscTab>

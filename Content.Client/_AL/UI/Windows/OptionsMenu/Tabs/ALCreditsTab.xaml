@@ -1,0 +1,14 @@
+﻿<tabs:ALCreditsTab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
+                   xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                   xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+                   xmlns:credits="clr-namespace:Content.Client.Credits"
+                   HorizontalExpand="True">
+    <VStack HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RichText Text="[bold]Brought to you in part by:[/bold]" HorizontalAlignment="Center"/>
+        <RichText Text="Wizard's Den Space Station 14" HorizontalAlignment="Center"/>
+        <RichText Text="Afterlight Development Team" HorizontalAlignment="Center"/>
+        <RichText Text="You!" HorizontalAlignment="Center"/>
+        <VStack MinHeight="150" />
+        <customControls:UICommandButton Text="Full Credits" WindowType="credits:CreditsWindow" HorizontalAlignment="Center"/>
+    </VStack>
+</tabs:ALCreditsTab>

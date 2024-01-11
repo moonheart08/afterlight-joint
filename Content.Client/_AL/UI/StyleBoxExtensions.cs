@@ -35,4 +35,9 @@ public static class StyleBoxExtensions
         return b;
     }
 
+    public static StyleBoxHSkew Skew(this StyleBox box, Angle by)
+    {
+        return new StyleBoxHSkew(box, (float)by.Reduced().Theta);
+    }
+
 }

@@ -9,6 +9,8 @@ namespace Content.Client._AL.UI.Widgets;
 
 public class Button : ContainerButton
 {
+    [Dependency] private ILocalizationManager _localization = default!;
+
     public Text TextWidget { get; }
 
     /// <summary>
@@ -37,21 +39,23 @@ public class Button : ContainerButton
     {
         base.EnteredTree();
         UpdateGroupAssignment();
+        if (this.TryGetLocString(_localization) is { } s)
+            Text = s;
+        if (string.IsNullOrEmpty(Text) && Name is not null)
+            Text = Name;
     }
 
     protected void UpdateGroupAssignment()
     {
         if (GroupName is { } gn && this.GetImplementingParent<IGroupOrganizer>() is {} org)
         {
-            var group = org.GetButtonGroup(gn);
-            if (group.Equals(Group)) // ENGINE BUG: Updating this after set with the same group is not caught and results in an exception.
-                return;
             Group = org.GetButtonGroup(gn);
         }
     }
 
     public Button()
     {
+        IoCManager.InjectDependencies(this);
         HorizontalExpand = false;
         Margin = new Thickness(2);
         AddStyleClass(StyleClassButton);
@@ -62,4 +66,6 @@ public class Button : ContainerButton
         };
         AddChild(TextWidget);
     }
+
+
 }

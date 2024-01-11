@@ -5,7 +5,7 @@ using Robust.Client.Graphics;
 
 namespace Content.Client._AL.UI.Styleboxes;
 
-public sealed class StyleBoxZoomed: StyleBox, IBrightnessAware
+public sealed class StyleBoxScaled: StyleBox, IBrightnessAware
 {
     public StyleBox Base { get; }
 
@@ -17,7 +17,7 @@ public sealed class StyleBoxZoomed: StyleBox, IBrightnessAware
         return Base.GetContentMargin(margin);
     }
 
-    public StyleBoxZoomed(StyleBox @base, float scale)
+    public StyleBoxScaled(StyleBox @base, float scale)
     {
         Base = @base;
         Scale = scale;
