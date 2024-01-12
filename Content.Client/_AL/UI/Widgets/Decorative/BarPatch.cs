@@ -1,5 +1,8 @@
 ﻿namespace Content.Client._AL.UI.Widgets.Decorative;
 
+/// <summary>
+///     A set of vertical bars meant to look like a grille. Decorative, no function.
+/// </summary>
 public sealed class BarPatch : VStack
 {
     public BarPatch()
