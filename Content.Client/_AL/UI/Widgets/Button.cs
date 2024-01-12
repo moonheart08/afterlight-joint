@@ -25,7 +25,6 @@ public class Button : ContainerButton
     protected override void StylePropertiesChanged()
     {
         base.StylePropertiesChanged();
-        TextWidget.Update();
         UpdateGroupAssignment();
     }
 

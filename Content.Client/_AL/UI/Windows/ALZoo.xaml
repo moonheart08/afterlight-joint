@@ -11,9 +11,11 @@
                     <Button Disabled="True" Text="Click me!"/>
                 </HStack>
 
-                <InfoBox Header="Info!" MaxWidth="200">
-                    <RichText Text="Something to see here, probably! This is an InfoBox control. For Info. Right?"/>
-                </InfoBox>
+                <VBackgroundPanel>
+                    <InfoBox Header="Info!" MaxWidth="200">
+                        <RichText Text="Something to see here, probably! This is an InfoBox control. For Info. Right?"/>
+                    </InfoBox>
+                </VBackgroundPanel>
             </VBackgroundPanel>
             <Keypad/>
         </HStack>

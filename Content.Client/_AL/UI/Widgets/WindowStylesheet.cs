@@ -17,8 +17,8 @@ public sealed class WindowStylesheet : BaseSubsheet
             origin.LoadIndefiniteNinePatchSet($"{origin.FileRoot}/window_cross_lowres_{{0}}.png", 0);
         return new StyleRule[]
         {
-            Element().Class(StyleSelectors.WindowBackground).Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
-            Element().Class(StyleSelectors.WindowContentsBackground).Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
+            Element().Class(Style.WindowBackground).Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
+            Element().Class(Style.WindowContentsBackground).Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
             Element().Class(DefaultWindow.StyleClassWindowCloseButton)
                 .Prop(TextureButton.StylePropertyTexture, WindowTextures[2]),
             Element().Class(DefaultWindow.StyleClassWindowCloseButton).Hover()

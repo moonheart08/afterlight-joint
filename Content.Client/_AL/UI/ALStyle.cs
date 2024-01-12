@@ -39,30 +39,32 @@ public sealed class ALStyle : BaseStyle
     public static readonly Vector2 ButtonExtrusionPartial = new(0, 2);
     public static readonly Vector2 SliderExtrusion = new(0, 2);
 
+    public const float SwitchToDarkLevel = 0.65f;
+
     [SuppressMessage("ReSharper", "AccessToStaticMemberViaDerivedType")]
     public ALStyle(IResourceCache resCache) : base(resCache)
     {
         var ourRules = new StyleRule[]
         {
-            Element().Class(StyleSelectors.WindowBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[2]),
-            Element().Class(StyleSelectors.WindowContentsBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[0].Extrude(WindowExtrusion)),
+            Element().Class(Style.WindowBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[2]),
+            Element().Class(Style.WindowContentsBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[0].Extrude(WindowExtrusion)),
 
             /* AL's button overrides. This just extrudes them out. */
-            Button().Normal().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[2].Extrude(ButtonExtrusion)),
-            Button().Hover().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[3].Extrude(ButtonExtrusionPartial)),
-            Button().Pressed().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[1]),
-            Button().Disabled().Prop(StyleSelectors.StyleBox, ButtonBackgrounds[0].Extrude(ButtonExtrusion)),
+            Button().Normal().Prop(Style.StyleBox, ButtonBackgrounds[2].Extrude(ButtonExtrusion)),
+            Button().Hover().Prop(Style.StyleBox, ButtonBackgrounds[3].Extrude(ButtonExtrusionPartial)),
+            Button().Pressed().Prop(Style.StyleBox, ButtonBackgrounds[1]),
+            Button().Disabled().Prop(Style.StyleBox, ButtonBackgrounds[0].Extrude(ButtonExtrusion)),
 
-            Button().Positive().Normal().Prop(StyleSelectors.StyleBox, ButtonPositiveBackgrounds[2].Extrude(ButtonExtrusion)),
-            Button().Positive().Hover().Prop(StyleSelectors.StyleBox, ButtonPositiveBackgrounds[3].Extrude(ButtonExtrusionPartial)),
-            Button().Positive().Pressed().Prop(StyleSelectors.StyleBox, ButtonPositiveBackgrounds[1]),
-            Button().Positive().Disabled().Prop(StyleSelectors.StyleBox, ButtonPositiveBackgrounds[0].Extrude(ButtonExtrusion)),
+            Button().Positive().Normal().Prop(Style.StyleBox, ButtonPositiveBackgrounds[2].Extrude(ButtonExtrusion)),
+            Button().Positive().Hover().Prop(Style.StyleBox, ButtonPositiveBackgrounds[3].Extrude(ButtonExtrusionPartial)),
+            Button().Positive().Pressed().Prop(Style.StyleBox, ButtonPositiveBackgrounds[1]),
+            Button().Positive().Disabled().Prop(Style.StyleBox, ButtonPositiveBackgrounds[0].Extrude(ButtonExtrusion)),
 
-            Button().Negative().Normal().Prop(StyleSelectors.StyleBox, ButtonNegativeBackgrounds[2].Extrude(ButtonExtrusion)),
-            Button().Negative().Hover().Prop(StyleSelectors.StyleBox, ButtonNegativeBackgrounds[3].Extrude(ButtonExtrusionPartial)),
-            Button().Negative().Pressed().Prop(StyleSelectors.StyleBox, ButtonNegativeBackgrounds[1]),
-            Button().Negative().Disabled().Prop(StyleSelectors.StyleBox, ButtonNegativeBackgrounds[0].Extrude(ButtonExtrusion)),
-            Element<HBar>().Prop(StyleSelectors.BarStyleboxes, SecondarySolidBackgrounds[0..4].ToArray()),
+            Button().Negative().Normal().Prop(Style.StyleBox, ButtonNegativeBackgrounds[2].Extrude(ButtonExtrusion)),
+            Button().Negative().Hover().Prop(Style.StyleBox, ButtonNegativeBackgrounds[3].Extrude(ButtonExtrusionPartial)),
+            Button().Negative().Pressed().Prop(Style.StyleBox, ButtonNegativeBackgrounds[1]),
+            Button().Negative().Disabled().Prop(Style.StyleBox, ButtonNegativeBackgrounds[0].Extrude(ButtonExtrusion)),
+            Element<HBar>().Prop(Style.BarStyleboxes, SecondarySolidBackgrounds[0..4].ToArray()),
 
             /* Sliders */
             Element<Slider>()
@@ -75,8 +77,11 @@ public sealed class ALStyle : BaseStyle
             /* Legacy/built-in window compat */
             Element().Class(DefaultWindow.StyleClassWindowPanel)
                 .Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[0].Extrude(WindowExtrusion)),
-            Element().Class(StyleSelectors.BorderedWindowPanel)
+            Element().Class(Style.BorderedWindowPanel)
                 .Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[0].Extrude(WindowExtrusion)),
+
+            /* Font color stuff */
+            Element().BrighterThan(SwitchToDarkLevel).Prop(Style.FontColorLightBg, SecondaryPalette[4]),
         };
 
         Stylesheet = new(BaseRules.Concat(ourRules).ToArray());

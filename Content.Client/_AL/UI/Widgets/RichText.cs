@@ -61,12 +61,12 @@ public sealed class RichText : RichTextLabel
                 }
             }
         }
-        if (luminosity >= SwitchToDarkLevel && TryGetStyleProperty(StyleSelectors.FontColorLightBg, out Color color))
+        if (luminosity >= SwitchToDarkLevel && TryGetStyleProperty(Style.FontColorLightBg, out Color color))
         {
             if (FormattedText is not null)
                 SetMessage(FormattedText, tagsAllowed: TagsAllowed, defaultColor: color);
         }
-        else if (TryGetStyleProperty(StyleSelectors.FontColor, out Color c))
+        else if (TryGetStyleProperty(Style.FontColor, out Color c))
         {
             if (FormattedText is not null)
                 SetMessage(FormattedText, tagsAllowed: TagsAllowed, defaultColor: c);

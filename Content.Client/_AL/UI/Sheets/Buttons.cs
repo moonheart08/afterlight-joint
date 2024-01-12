@@ -11,20 +11,20 @@ public sealed class Buttons : BaseSubsheet
     {
         return new StyleRule[]
         {
-            Button().Normal().Prop(StyleSelectors.StyleBox, origin.ButtonBackgrounds[2]),
-            Button().Hover().Prop(StyleSelectors.StyleBox, origin.ButtonBackgrounds[3]),
-            Button().Pressed().Prop(StyleSelectors.StyleBox, origin.ButtonBackgrounds[1]),
-            Button().Disabled().Prop(StyleSelectors.StyleBox, origin.ButtonBackgrounds[0]),
+            Button().Normal().Prop(Style.StyleBox, origin.ButtonBackgrounds[2]),
+            Button().Hover().Prop(Style.StyleBox, origin.ButtonBackgrounds[3]),
+            Button().Pressed().Prop(Style.StyleBox, origin.ButtonBackgrounds[1]),
+            Button().Disabled().Prop(Style.StyleBox, origin.ButtonBackgrounds[0]),
 
-            Button().Positive().Normal().Prop(StyleSelectors.StyleBox, origin.ButtonPositiveBackgrounds[2]),
-            Button().Positive().Hover().Prop(StyleSelectors.StyleBox, origin.ButtonPositiveBackgrounds[3]),
-            Button().Positive().Pressed().Prop(StyleSelectors.StyleBox, origin.ButtonPositiveBackgrounds[1]),
-            Button().Positive().Disabled().Prop(StyleSelectors.StyleBox, origin.ButtonPositiveBackgrounds[0]),
+            Button().Positive().Normal().Prop(Style.StyleBox, origin.ButtonPositiveBackgrounds[2]),
+            Button().Positive().Hover().Prop(Style.StyleBox, origin.ButtonPositiveBackgrounds[3]),
+            Button().Positive().Pressed().Prop(Style.StyleBox, origin.ButtonPositiveBackgrounds[1]),
+            Button().Positive().Disabled().Prop(Style.StyleBox, origin.ButtonPositiveBackgrounds[0]),
 
-            Button().Negative().Normal().Prop(StyleSelectors.StyleBox, origin.ButtonNegativeBackgrounds[2]),
-            Button().Negative().Hover().Prop(StyleSelectors.StyleBox, origin.ButtonNegativeBackgrounds[3]),
-            Button().Negative().Pressed().Prop(StyleSelectors.StyleBox, origin.ButtonNegativeBackgrounds[1]),
-            Button().Negative().Disabled().Prop(StyleSelectors.StyleBox, origin.ButtonNegativeBackgrounds[0]),
+            Button().Negative().Normal().Prop(Style.StyleBox, origin.ButtonNegativeBackgrounds[2]),
+            Button().Negative().Hover().Prop(Style.StyleBox, origin.ButtonNegativeBackgrounds[3]),
+            Button().Negative().Pressed().Prop(Style.StyleBox, origin.ButtonNegativeBackgrounds[1]),
+            Button().Negative().Disabled().Prop(Style.StyleBox, origin.ButtonNegativeBackgrounds[0]),
         };
     }
 }

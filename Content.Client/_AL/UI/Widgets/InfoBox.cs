@@ -19,7 +19,7 @@ public sealed class InfoBox : BackgroundPanel
 
     public InfoBox()
     {
-        Label.AddStyleClass(StyleSelectors.Bold);
+        Label.AddStyleClass(Style.Bold);
         Label.HorizontalAlignment = HAlignment.Center;
         Label.HorizontalExpand = true;
         AddChild(Inner);

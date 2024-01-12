@@ -1,6 +1,6 @@
 ﻿namespace Content.Client._AL.UI;
 
-public static class StyleSelectors
+public static class Style
 {
     public const string StyleBox = "stylebox";
     public const string ModulateSelf = "modulate-self";

@@ -38,7 +38,7 @@ public class HBar : PanelContainer, IDepthMeasure<BackgroundPanel>
 
     public void OnDepthUpdate(int n)
     {
-        if (TryGetStyleProperty(StyleSelectors.BarStyleboxes, out StyleBox[]? boxes))
+        if (TryGetStyleProperty(Style.BarStyleboxes, out StyleBox[]? boxes))
         {
             if (boxes is null)
                 return;

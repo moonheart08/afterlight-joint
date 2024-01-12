@@ -1,4 +1,5 @@
-﻿using Robust.Client.UserInterface;
+﻿using Content.Client._AL.UI.Misc;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 
@@ -37,12 +38,12 @@ public static class ALStylesheetHelpers
 
     public static MutableSelectorElement Positive(this MutableSelectorElement i)
     {
-        return i.Class(StyleSelectors.Positive);
+        return i.Class(Style.Positive);
     }
 
     public static MutableSelectorElement Negative(this MutableSelectorElement i)
     {
-        return i.Class(StyleSelectors.Negative);
+        return i.Class(Style.Negative);
     }
 
     public static MutableSelectorElement Normal(this MutableSelectorElement i)
@@ -63,5 +64,15 @@ public static class ALStylesheetHelpers
     public static MutableSelectorElement Disabled(this MutableSelectorElement i)
     {
         return i.Pseudo(ContainerButton.StylePseudoClassDisabled);
+    }
+
+    public static MutableSelectorLuminance BrighterThan(this MutableSelector selector, float lum)
+    {
+        return new(selector, lum, SelectorLuminance.SelectorMode.GreaterThan);
+    }
+
+    public static MutableSelectorLuminance DarkerThan(this MutableSelector selector, float lum)
+    {
+        return new(selector, lum, SelectorLuminance.SelectorMode.LessThan);
     }
 }

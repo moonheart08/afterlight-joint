@@ -14,25 +14,25 @@ public sealed class ContentMenuButtons : BaseSubsheet
         return new StyleRule[]
         {
             E<MenuButton>().ParentOf<BoxContainer>().ParentOf<Label>()
-                .Prop(StyleSelectors.Font, origin.Font.GetFont(origin.BaseFontSize + 2, FontStack.FontKind.Bold)),
+                .Prop(Style.Font, origin.Font.GetFont(origin.BaseFontSize + 2, FontStack.FontKind.Bold)),
 
             E<MenuButton>().Normal().ParentOf<BoxContainer>().ParentOf<Label>()
-                .Prop(StyleSelectors.FontColor, origin.PrimaryPalette[1]),
+                .Prop(Style.FontColor, origin.PrimaryPalette[1]),
             E<MenuButton>().Hover().ParentOf<BoxContainer>().ParentOf<Label>()
-                .Prop(StyleSelectors.FontColor, origin.PrimaryPalette[0]),
+                .Prop(Style.FontColor, origin.PrimaryPalette[0]),
             E<MenuButton>().Pressed().ParentOf<BoxContainer>().ParentOf<Label>()
-                .Prop(StyleSelectors.FontColor, origin.PrimaryPalette[2]),
+                .Prop(Style.FontColor, origin.PrimaryPalette[2]),
             E<MenuButton>().Disabled().ParentOf<BoxContainer>().ParentOf<Label>()
-                .Prop(StyleSelectors.FontColor, origin.PrimaryPalette[3]),
+                .Prop(Style.FontColor, origin.PrimaryPalette[3]),
 
             E<MenuButton>().Normal().ParentOf<BoxContainer>().ParentOf<TextureRect>()
-                .Prop(StyleSelectors.ModulateSelf, origin.PrimaryPalette[1]),
+                .Prop(Style.ModulateSelf, origin.PrimaryPalette[1]),
             E<MenuButton>().Hover().ParentOf<BoxContainer>().ParentOf<TextureRect>()
-                .Prop(StyleSelectors.ModulateSelf, origin.PrimaryPalette[0]),
+                .Prop(Style.ModulateSelf, origin.PrimaryPalette[0]),
             E<MenuButton>().Pressed().ParentOf<BoxContainer>().ParentOf<TextureRect>()
-                .Prop(StyleSelectors.ModulateSelf, origin.PrimaryPalette[2]),
+                .Prop(Style.ModulateSelf, origin.PrimaryPalette[2]),
             E<MenuButton>().Disabled().ParentOf<BoxContainer>().ParentOf<TextureRect>()
-                .Prop(StyleSelectors.ModulateSelf, origin.PrimaryPalette[3]),
+                .Prop(Style.ModulateSelf, origin.PrimaryPalette[3]),
         };
     }
 }

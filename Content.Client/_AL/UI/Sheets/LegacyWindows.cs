@@ -14,10 +14,10 @@ public sealed class LegacyWindows : BaseSubsheet
         return new StyleRule[]
         {
             Element<Label>().Class(DefaultWindow.StyleClassWindowTitle)
-                .Prop(StyleSelectors.Font, origin.Font.GetFont(14, FontStack.FontKind.Bold)),
+                .Prop(Style.Font, origin.Font.GetFont(14, FontStack.FontKind.Bold)),
             Element().Class(DefaultWindow.StyleClassWindowPanel)
                 .Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
-            Element().Class(StyleSelectors.BorderedWindowPanel)
+            Element().Class(Style.BorderedWindowPanel)
                 .Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
         };
     }

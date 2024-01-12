@@ -81,19 +81,19 @@ public abstract class BaseStyle
 
         BaseRules = new StyleRule[]
         {
-            Element().Prop(StyleSelectors.BackgroundPanelStyleboxes, PanelBackgrounds),
-            Element().Prop(StyleSelectors.PrimaryPalette, PrimaryPalette),
-            Element().Prop(StyleSelectors.SecondaryPalette, SecondaryPalette),
+            Element().Prop(Style.BackgroundPanelStyleboxes, PanelBackgrounds),
+            Element().Prop(Style.PrimaryPalette, PrimaryPalette),
+            Element().Prop(Style.SecondaryPalette, SecondaryPalette),
 
             /* TEXT AND FONTS */
-            Element().Prop(StyleSelectors.Font, Font.GetFont(BaseFontSize)),
-            Element().Class(StyleSelectors.Bold)
-                .Prop(StyleSelectors.Font, Font.GetFont(BaseFontSize, FontStack.FontKind.Bold)),
-            Element().Prop(StyleSelectors.FontColor, SecondaryPalette[0]),
-            Element().Prop(StyleSelectors.FontColorLightBg, SecondaryPalette[4]),
+            Element().Prop(Style.Font, Font.GetFont(BaseFontSize)),
+            Element().Class(Style.Bold)
+                .Prop(Style.Font, Font.GetFont(BaseFontSize, FontStack.FontKind.Bold)),
+            Element().Prop(Style.FontColor, SecondaryPalette[0]),
+
 
             /* Horizontal and vertical bars */
-            E<HBar>().Prop(StyleSelectors.StyleBox, SecondarySolidBackgrounds[0]),
+            E<HBar>().Prop(Style.StyleBox, SecondarySolidBackgrounds[0]),
 
             /* Sliders */
             E<Slider>()

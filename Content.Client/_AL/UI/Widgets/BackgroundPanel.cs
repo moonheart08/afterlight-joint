@@ -34,7 +34,7 @@ public class BackgroundPanel : PanelContainer, IDepthMeasure<BackgroundPanel>, I
 
     public virtual void OnDepthUpdate(int n)
     {
-        if (TryGetStyleProperty(StyleSelectors.BackgroundPanelStyleboxes, out StyleBox[]? boxes))
+        if (TryGetStyleProperty(Style.BackgroundPanelStyleboxes, out StyleBox[]? boxes))
         {
             if (boxes is null)
                 return;

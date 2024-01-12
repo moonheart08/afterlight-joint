@@ -18,7 +18,7 @@ public sealed class InputLabelStyle : BaseSubsheet
     {
         return new StyleRule[]
         {
-            Element<InputLabel>().Prop(StyleSelectors.Font,
+            Element<InputLabel>().Prop(Style.Font,
                 origin.Font.GetFont(origin.BaseFontSize, FontStack.FontKind.Bold))
         };
     }
