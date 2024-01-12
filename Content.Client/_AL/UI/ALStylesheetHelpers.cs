@@ -6,6 +6,23 @@ namespace Content.Client._AL.UI;
 
 public static class ALStylesheetHelpers
 {
+    public static MutableSelectorElement E<T>()
+        where T: Control
+    {
+        return Element<T>();
+    }
+
+    public static MutableSelectorChild ParentOf(this MutableSelector selector, MutableSelector other)
+    {
+        return Child().Parent(selector).Child(other);
+    }
+
+    public static MutableSelectorChild ParentOf<TOther>(this MutableSelector selector)
+        where TOther: Control
+    {
+        return selector.ParentOf(Element<TOther>());
+    }
+
     public static MutableSelectorElement Button()
     {
         var e = new MutableSelectorElement() {Type = typeof(ContainerButton)}.Class(ContainerButton.StyleClassButton);

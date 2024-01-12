@@ -52,7 +52,7 @@ public class BackgroundPanel : PanelContainer, IDepthMeasure<BackgroundPanel>, I
 
 public sealed class VBackgroundPanel : BackgroundPanel
 {
-    public readonly Stack Inner = new() { Orientation = BoxContainer.LayoutOrientation.Vertical, Margin = new Thickness(4)};
+    public readonly VStack Inner = new() {Margin = new Thickness(4)};
 
     public VBackgroundPanel()
     {
@@ -64,7 +64,7 @@ public sealed class VBackgroundPanel : BackgroundPanel
 
 public sealed class HBackgroundPanel : BackgroundPanel
 {
-    public readonly Stack Inner = new() { Orientation = BoxContainer.LayoutOrientation.Vertical, Margin = new Thickness(4)};
+    public readonly HStack Inner = new() {Margin = new Thickness(4)};
 
     public HBackgroundPanel()
     {

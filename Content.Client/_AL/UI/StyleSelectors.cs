@@ -3,6 +3,7 @@
 public static class StyleSelectors
 {
     public const string StyleBox = "stylebox";
+    public const string ModulateSelf = "modulate-self";
 
     #region Palettes
     public const string PrimaryPalette = "PrimaryPalette";
@@ -16,6 +17,7 @@ public static class StyleSelectors
     public const string FontColorLightBg = "FontColorLightBg";
     public const string FontColor = "font-color";
     public const string Bold = "Bold";
+    public const string InputLabel = "InputLabel";
     #endregion
 
     #region Panel Parameters

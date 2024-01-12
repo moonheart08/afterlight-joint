@@ -1,12 +1,13 @@
 ﻿<tabs:ALGraphicsTab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
                     xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                    xmlns:controls="https://spacestation14.io"
                     HorizontalExpand="True">
-    <HStack>
+    <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
         <VGrowStack>
-            <Text Text="UI Scale"/>
+            <InputLabel Text="UI Scale"/>
         </VGrowStack>
         <VGrowStack>
-
+            <controls:Slider/>
         </VGrowStack>
-    </HStack>
+    </HGrowStack>
 </tabs:ALGraphicsTab>

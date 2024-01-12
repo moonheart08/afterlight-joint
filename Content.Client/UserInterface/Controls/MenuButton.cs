@@ -55,14 +55,14 @@ public sealed class MenuButton : ContainerButton
             VerticalAlignment = VAlignment.Center,
             VerticalExpand = true,
             Margin = new Thickness(0, VertPad),
-            ModulateSelfOverride = NormalColor,
+            // ModulateSelfOverride = NormalColor, // AL EDIT
             Stretch = TextureRect.StretchMode.KeepCentered
         };
         _buttonLabel = new Label
         {
             Text = "",
             HorizontalAlignment = HAlignment.Center,
-            ModulateSelfOverride = NormalColor,
+            // ModulateSelfOverride = NormalColor, // AL EDIT
             StyleClasses = {StyleClassLabelTopButton}
         };
         _root = new BoxContainer
@@ -112,6 +112,14 @@ public sealed class MenuButton : ContainerButton
 
     private void UpdateChildColors()
     {
+        // AL EDIT: fuck this lol
+        if (_root is null)
+            return;
+        _root.Stylesheet = null; // :)
+
+        return;
+
+
         if (_buttonIcon == null || _buttonLabel == null) return;
         switch (DrawMode)
         {

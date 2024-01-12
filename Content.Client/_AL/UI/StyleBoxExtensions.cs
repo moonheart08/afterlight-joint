@@ -31,7 +31,6 @@ public static class StyleBoxExtensions
     public static StyleboxExtruded Extrude(this StyleBox box, Vector2 by, StyleBox? extrusion = default)
     {
         var b = new StyleboxExtruded(box, by, extrusion);
-
         return b;
     }
 

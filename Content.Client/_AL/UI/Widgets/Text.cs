@@ -4,7 +4,8 @@ using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client._AL.UI.Widgets;
 
-public sealed class Text : Label
+[Virtual]
+public class Text : Label
 {
     private const float SwitchToDarkLevel = 0.65f;
 

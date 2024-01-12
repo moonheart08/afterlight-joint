@@ -5,6 +5,7 @@ using Content.Client._AL.UI.Sheets;
 using Content.Client._AL.UI.Styleboxes;
 using Content.Client._AL.UI.Widgets;
 using Content.Client.Resources;
+using Content.Client.UserInterface.Controls;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
@@ -85,17 +86,17 @@ public abstract class BaseStyle
             Element().Prop(StyleSelectors.SecondaryPalette, SecondaryPalette),
 
             /* TEXT AND FONTS */
-            Element().Prop(StyleSelectors.Font, Font.GetFont(ResourceCache, BaseFontSize)),
+            Element().Prop(StyleSelectors.Font, Font.GetFont(BaseFontSize)),
             Element().Class(StyleSelectors.Bold)
-                .Prop(StyleSelectors.Font, Font.GetFont(ResourceCache, BaseFontSize, FontStack.FontKind.Bold)),
+                .Prop(StyleSelectors.Font, Font.GetFont(BaseFontSize, FontStack.FontKind.Bold)),
             Element().Prop(StyleSelectors.FontColor, SecondaryPalette[0]),
             Element().Prop(StyleSelectors.FontColorLightBg, SecondaryPalette[4]),
 
             /* Horizontal and vertical bars */
-            Element<HBar>().Prop(StyleSelectors.StyleBox, SecondarySolidBackgrounds[0]),
+            E<HBar>().Prop(StyleSelectors.StyleBox, SecondarySolidBackgrounds[0]),
 
             /* Sliders */
-            Element<Slider>()
+            E<Slider>()
                 .Prop(Slider.StylePropertyBackground, LoadTexture($"{FileRoot}/slider_fill.png").ToPatchStyleBox(14).Modulate("#141111FF"))
                 .Prop(Slider.StylePropertyForeground, LoadTexture($"{FileRoot}/slider_outline.png").ToPatchStyleBox(14).Modulate(SecondaryPalette[4]))
                 .Prop(Slider.StylePropertyGrabber, LoadTexture($"{FileRoot}/slider_grabber.png").ToPatchStyleBox(14).Zoom(2))

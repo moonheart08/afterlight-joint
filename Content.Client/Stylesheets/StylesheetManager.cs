@@ -15,10 +15,10 @@ namespace Content.Client.Stylesheets
 
         public void Initialize()
         {
-            /*
+
             SheetNano = new StyleNano(_resourceCache).Stylesheet;
             SheetSpace = new StyleSpace(_resourceCache).Stylesheet;
-
+            /*
             _userInterfaceManager.Stylesheet = SheetNano;
             */ // AL EDIT: FUCK THIS LOL!
 

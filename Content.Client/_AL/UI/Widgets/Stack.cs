@@ -1,14 +1,58 @@
-﻿using Content.Client._AL.UI.Interfaces;
+﻿using System.Linq;
+using Content.Client._AL.UI.Interfaces;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client._AL.UI.Widgets;
 
 [Virtual]
-public class Stack : BoxContainer
+public abstract class Stack : BoxContainer
 {
     public Stack()
     {
         Margin = new Thickness(4);
+    }
+
+    protected override void ChildAdded(Control newChild)
+    {
+        base.ChildAdded(newChild);
+        if (Children.Count() == 1 && InnerLayoutRatioNum is {} num)
+        {
+            newChild.SizeFlagsStretchRatio = num;
+        }
+
+        if (ExpandInner)
+        {
+            if (Orientation == LayoutOrientation.Horizontal)
+            {
+                newChild.HorizontalExpand = true;
+            }
+            else
+            {
+                newChild.VerticalExpand = true;
+            }
+        }
+    }
+
+    public string? InnerLayoutRatio { get; set; } = null;
+    public bool ExpandInner { get; set; } = false;
+
+    protected float? InnerLayoutRatioNum
+    {
+        get
+        {
+            if (InnerLayoutRatio is null)
+                return null;
+
+            var split = InnerLayoutRatio.Split(':');
+            if (split.Length != 2 || !float.TryParse(split[0], out var left) || !float.TryParse(split[1], out var right))
+            {
+                throw new Exception(
+                    $"Couldn't parse layout ratio {InnerLayoutRatio}, a ratio is of the format X:Y, i.e. 1:2 or 16:9");
+            }
+
+            return left / right;
+        }
     }
 }
 

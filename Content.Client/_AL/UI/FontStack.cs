@@ -8,6 +8,8 @@ namespace Content.Client._AL.UI;
 
 public abstract class FontStack
 {
+    [Dependency] private readonly IResourceCache _resourceCache = default!;
+
     /// <summary>
     ///     The primary font path, with string substitution markers.
     /// </summary>
@@ -64,12 +66,17 @@ public abstract class FontStack
     /// <param name="size">Size of the font to provide.</param>
     /// <param name="kind">Optional font kind. Defaults to Regular.</param>
     /// <returns>A Font resource.</returns>
-    public Font GetFont(IResourceCache cache, int size, FontKind kind = FontKind.Regular)
+    public Font GetFont(int size, FontKind kind = FontKind.Regular)
     {
         ALDebugTools.AssertContains(AvailableKinds, kind);
         var paths = GetFontPaths(kind);
 
-        return cache.GetFont(paths, size);
+        return _resourceCache.GetFont(paths, size);
+    }
+
+    protected FontStack()
+    {
+        IoCManager.InjectDependencies(this);
     }
 
     /// <summary>
