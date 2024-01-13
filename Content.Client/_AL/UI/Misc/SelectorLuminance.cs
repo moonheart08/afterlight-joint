@@ -40,11 +40,11 @@ public sealed class SelectorLuminance : Selector
     {
         if (Mode == SelectorMode.GreaterThan)
         {
-            return Luminance >= lum;
+            return Luminance <= lum;
         }
         else if (Mode == SelectorMode.LessThan)
         {
-            return Luminance <= lum;
+            return Luminance >= lum;
         }
 
         return false;

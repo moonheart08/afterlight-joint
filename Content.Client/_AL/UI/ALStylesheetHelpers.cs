@@ -66,7 +66,7 @@ public static class ALStylesheetHelpers
         return i.Pseudo(ContainerButton.StylePseudoClassDisabled);
     }
 
-    public static MutableSelectorLuminance BrighterThan(this MutableSelector selector, float lum)
+    public static MutableSelectorLuminance BgBrighterThan(this MutableSelector selector, float lum)
     {
         return new(selector, lum, SelectorLuminance.SelectorMode.GreaterThan);
     }

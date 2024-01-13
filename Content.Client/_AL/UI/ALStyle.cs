@@ -81,7 +81,7 @@ public sealed class ALStyle : BaseStyle
                 .Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[0].Extrude(WindowExtrusion)),
 
             /* Font color stuff */
-            Element().BrighterThan(SwitchToDarkLevel).Prop(Style.FontColorLightBg, SecondaryPalette[4]),
+            Element().BgBrighterThan(SwitchToDarkLevel).Prop(Style.FontColor, SecondaryPalette[4]),
         };
 
         Stylesheet = new(BaseRules.Concat(ourRules).ToArray());
