@@ -7,9 +7,6 @@ namespace Content.Client._AL.UI.Widgets;
 
 public sealed class ElementSet : Container
 {
-    public static readonly AttachedProperty<BaseButton> ElementVisibilityButton = AttachedProperty<BaseButton>.CreateNull("ElementVisibilityButton", typeof(ElementSet));
-    public static readonly AttachedProperty<Control> ElementControlsVisibility = AttachedProperty<Control>.CreateNull("ElementControlsVisibility", typeof(ElementSet));
-
     public Control CurrentElement { get; private set; } = default!;
     public string? ControlledByGroup { get; set; } = null;
 
@@ -69,10 +66,6 @@ public sealed class ElementSet : Container
         var i = 0;
         foreach (var button in group.Buttons)
         {
-            button.SetValue(ElementControlsVisibility, GetChild(i));
-            GetChild(i).SetValue(ElementVisibilityButton, button);
-
-
             var i1 = i;
             button.OnPressed += _ =>
             {

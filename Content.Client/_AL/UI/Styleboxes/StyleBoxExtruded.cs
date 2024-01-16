@@ -10,6 +10,8 @@ public sealed class StyleboxExtruded : StyleBox, IBrightnessAware
 
     public StyleBox? Extrusion { get; }
 
+    public Color Modulate { get; }
+
     public Vector2 Offset { get; }
 
     protected override float GetDefaultContentMargin(Margin margin)
@@ -17,11 +19,18 @@ public sealed class StyleboxExtruded : StyleBox, IBrightnessAware
         return Base.GetContentMargin(margin);
     }
 
-    public StyleboxExtruded(StyleBox @base, Vector2 offset, StyleBox? extrusion = default)
+    public StyleboxExtruded(StyleBox @base, Vector2 offset, StyleBox? extrusion = default, Color? modulate = null)
     {
+        modulate ??= Color.DarkGray;
+        Modulate = modulate.Value;
         Base = @base;
         Offset = offset;
-        Padding = new Thickness(Base.PaddingLeft, Base.PaddingTop, Base.PaddingRight, Base.PaddingBottom);
+        Padding = new Thickness(
+                Base.PaddingLeft,
+                Base.PaddingTop,
+                Base.PaddingRight,
+                Base.PaddingBottom
+            );
         Extrusion = extrusion;
     }
 
@@ -29,17 +38,10 @@ public sealed class StyleboxExtruded : StyleBox, IBrightnessAware
     {
         var oldXform = handle.GetTransform();
         var old = handle.Modulate;
-        handle.Modulate = Color.DarkGray;
+        handle.Modulate = Modulate;
         (Extrusion ?? Base).Draw(handle, box, uiScale);
         handle.Modulate = old;
-        var offs = Matrix3.CreateTranslation((-Offset) * uiScale);
-        var xform = oldXform;
-        xform.Multiply(offs);
-        handle.SetTransform(xform);
-
-        Base.Draw(handle, box, uiScale);
-
-        handle.SetTransform(oldXform);
+        Base.Draw(handle, box.Translated(-Offset), uiScale);
     }
 
     public float Luminance()

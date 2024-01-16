@@ -75,4 +75,24 @@ public static class ALStylesheetHelpers
     {
         return new(selector, lum, SelectorLuminance.SelectorMode.LessThan);
     }
+
+    public static T AndIf<T>(this T inp, bool v, Func<T, T> fn)
+    {
+        if (v)
+        {
+            return fn(inp);
+        }
+
+        return inp;
+    }
+
+    public static T OrIf<T>(this T inp, bool v, T other)
+    {
+        if (v)
+        {
+            return other;
+        }
+
+        return inp;
+    }
 }

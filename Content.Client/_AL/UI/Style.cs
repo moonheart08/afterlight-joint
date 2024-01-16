@@ -20,6 +20,10 @@ public static class Style
     public const string InputLabel = "InputLabel";
     #endregion
 
+    #region Buttons
+    public const string EnumSelectorOptionClass = "EnumSelectorOption";
+    #endregion
+
     #region Panel Parameters
     public const string BackgroundPanelStyleboxes = "BackgroundPanelStyleboxes";
     public const string WindowContentsBackground = "WindowContentsBackground";
@@ -32,5 +36,11 @@ public static class Style
 
     #region Windows
     public const string BorderedWindowPanel = "BorderedWindowPanel";
+    #endregion
+
+    #region  Transform
+    public const string TransformContainerMatrix = "TransformContainerMatrix";
+    public const string TransformContainerCenterMatrix = "TransformContainerCenterMatrix";
+
     #endregion
 }

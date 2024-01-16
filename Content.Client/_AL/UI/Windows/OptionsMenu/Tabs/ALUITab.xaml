@@ -1,5 +1,62 @@
 ﻿<tabs:ALUITab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
               xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
-              HorizontalExpand="True">
-    <RichText Text="In theory you might make the UI usable here." />
+              HorizontalExpand="True"
+              xmlns:ui="clr-namespace:Content.Client._AL.UI"
+              xmlns:rt="https://spacestation14.io"
+              xmlns:smart="clr-namespace:Content.Client._AL.UI.Widgets.Smart">
+    <VStack>
+        <smart:FieldGroup Name="StyleConfigGroup" Type="ui:ALStyleConfig">
+            <HGrowStack>
+                <VStack HorizontalExpand="True">
+                    <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
+                        <InputLabel
+                            Text="{rt:Loc 'ui-optionsmenu-uitab-usedepth'}"
+                            ToolTip="{rt:Loc 'ui-optionsmenu-uitab-usedepth-tooltip'}"/>
+                        <smart:FieldCheckBox TargetField="UseDepth"
+                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-usedepth-tooltip'}"/>
+                    </HGrowStack>
+                    <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
+                        <InputLabel
+                            Text="{rt:Loc 'ui-optionsmenu-uitab-highcontrastdepth'}"
+                            ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrastdepth-tooltip'}"/>
+                        <smart:FieldCheckBox TargetField="HighContrastExtrude"
+                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrastdepth-tooltip'}"/>
+                    </HGrowStack>
+                </VStack>
+                <VStack HorizontalExpand="True">
+                    <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
+                        <InputLabel
+                            Text="{rt:Loc 'ui-optionsmenu-uitab-highcontrasttext'}"
+                            ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrasttext-tooltip'}"/>
+                        <smart:FieldCheckBox TargetField="HighContrastText"
+                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrasttext-tooltip'}"/>
+                    </HGrowStack>
+                </VStack>
+            </HGrowStack>
+        </smart:FieldGroup>
+        <smart:FieldGroup Name="UICVarsGroup" Type="tabs:UICVarsConfig">
+            <HGrowStack>
+                <VStack HorizontalExpand="True">
+                    <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
+                        <InputLabel Text="{rt:Loc 'ui-optionsmenu-uitab-uiscale'}"
+                                    ToolTip="{rt:Loc 'ui-optionsmenu-uitab-uiscale-tooltip'}"/>
+                        <smart:FieldEnumSelector TargetField="Scale"
+                                                 ToolTip="{rt:Loc 'ui-optionsmenu-uitab-uiscale-tooltip'}"/>
+                    </HGrowStack>
+                </VStack>
+                <VStack HorizontalExpand="True">
+                    <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
+
+                    </HGrowStack>
+                </VStack>
+            </HGrowStack>
+        </smart:FieldGroup>
+        <HBackgroundPanel VerticalAlignment="Bottom" Name="TestPane">
+            <InfoBox Header="Demo" MaxWidth="200">
+                <RichText Text="This serves to preview the selected UI style. Options marked with an asterisk don't support preview."/>
+            </InfoBox>
+            <Keypad/>
+            <HFill/>
+        </HBackgroundPanel>
+    </VStack>
 </tabs:ALUITab>

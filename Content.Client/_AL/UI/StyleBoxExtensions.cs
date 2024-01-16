@@ -28,9 +28,9 @@ public static class StyleBoxExtensions
         }
     }
 
-    public static StyleboxExtruded Extrude(this StyleBox box, Vector2 by, StyleBox? extrusion = default)
+    public static StyleboxExtruded Extrude(this StyleBox box, Vector2 by, StyleBox? extrusion = default, Color? modulation = default)
     {
-        var b = new StyleboxExtruded(box, by, extrusion);
+        var b = new StyleboxExtruded(box, by, extrusion, modulation);
         return b;
     }
 

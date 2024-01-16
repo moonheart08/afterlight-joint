@@ -25,7 +25,7 @@
         <VStack HorizontalExpand="True">
             <ElementSet Name="Panes" ControlledByGroup="TabSelect" HorizontalExpand="True" VerticalExpand="True">
                 <tabs:ALGraphicsTab/>
-                <tabs:ALUITab/>
+                <tabs:ALUITab Name="UiTab"/>
                 <tabs:ALAudioTab/>
                 <tabs:ALNetworkTab/>
                 <tabs:ALKeybindsTab/>

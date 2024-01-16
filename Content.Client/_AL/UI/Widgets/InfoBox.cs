@@ -15,7 +15,7 @@ public sealed class InfoBox : BackgroundPanel
     }
 
     private BoxContainer Inner { get; } = new() { Orientation = BoxContainer.LayoutOrientation.Vertical};
-    private PanelContainer InnerPanel { get; } = new();
+    private PanelContainer InnerPanel { get; } = new() { VerticalExpand = true };
 
     public InfoBox()
     {

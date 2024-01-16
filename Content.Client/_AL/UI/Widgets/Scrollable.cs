@@ -10,8 +10,33 @@ public abstract class Scrollable : ScrollContainer
         base.ChildAdded(newChild);
 
         if (ChildCount > 1)
+        {
             throw new Exception(
                 "Scrollable controls cannot contain more than one child, as they are a modifier to another control.");
+        }
+    }
+}
 
+[Virtual]
+public class VScrollable : Scrollable
+{
+    public VScrollable()
+    {
+        HScrollEnabled = false;
+        VScrollEnabled = true;
+        HorizontalExpand = true;
+        VerticalExpand = true;
+    }
+}
+
+[Virtual]
+public class HScrollable : Scrollable
+{
+    public HScrollable()
+    {
+        HScrollEnabled = true;
+        VScrollEnabled = false;
+        HorizontalExpand = true;
+        VerticalExpand = true;
     }
 }

@@ -1,12 +1,14 @@
 using Content.Client._AL.UI;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
+using Robust.Shared.Configuration;
 using Robust.Shared.IoC;
 
 namespace Content.Client.Stylesheets
 {
     public sealed class StylesheetManager : IStylesheetManager
     {
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IResourceCache _resourceCache = default!;
 
@@ -22,7 +24,20 @@ namespace Content.Client.Stylesheets
             _userInterfaceManager.Stylesheet = SheetNano;
             */ // AL EDIT: FUCK THIS LOL!
 
-            _userInterfaceManager.Stylesheet = new ALStyle(_resourceCache).Stylesheet;
+            _cfg.OnValueChanged(UICVars.UseDepth, _ => UpdateSheet());
+            _cfg.OnValueChanged(UICVars.HighContrastText, _ => UpdateSheet());
+            _cfg.OnValueChanged(UICVars.HighContrastExtrude, _ => UpdateSheet());
+            UpdateSheet();
+        }
+
+        private void UpdateSheet()
+        {
+            _userInterfaceManager.Stylesheet = GetCurrentSheet(ALStyleConfig.FromCVars()).Stylesheet;
+        }
+
+        public BaseStyle GetCurrentSheet(ALStyleConfig cfg)
+        {
+            return new ALStyle(_resourceCache, cfg);
         }
     }
 }

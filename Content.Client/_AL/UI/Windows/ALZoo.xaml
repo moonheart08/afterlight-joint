@@ -22,5 +22,17 @@
         <rt:Slider Value="25"/>
         <rt:Slider Value="50"/>
         <rt:Slider Value="75"/>
+
+        <PinboardContainer MinSize="300 300">
+            <VBackgroundPanel PinboardContainer.PinLocation="100 100">
+                <Text Text="Pinboard 1"/>
+            </VBackgroundPanel>
+            <VBackgroundPanel PinboardContainer.PinLocation="200 200">
+                <Text Text="Pinboard 2"/>
+            </VBackgroundPanel>
+            <VBackgroundPanel>
+                <Text Text="Pinboard 3"/>
+            </VBackgroundPanel>
+        </PinboardContainer>
     </VGrowStack>
 </windows:ALZoo>
