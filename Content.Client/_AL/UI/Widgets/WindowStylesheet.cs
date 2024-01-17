@@ -1,4 +1,5 @@
-﻿using Content.Client._AL.UI.Sheets;
+﻿using System.Numerics;
+using Content.Client._AL.UI.Sheets;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
@@ -14,16 +15,18 @@ public sealed class WindowStylesheet : BaseSubsheet
     {
         var theme = origin.UserInterface.CurrentTheme;
         var (WindowTextures, _, _) =
-            origin.LoadIndefiniteNinePatchSet($"{origin.FileRoot}/window_cross_lowres_{{0}}.png", 0);
+            origin.LoadIndefiniteNinePatchSet($"{origin.FileRoot}/window_cross_{{0}}.png", 0);
         return new StyleRule[]
         {
             Element().Class(Style.WindowBackground).Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
             Element().Class(Style.WindowContentsBackground).Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
-            Element().Class(DefaultWindow.StyleClassWindowCloseButton)
-                .Prop(TextureButton.StylePropertyTexture, WindowTextures[2]),
-            Element().Class(DefaultWindow.StyleClassWindowCloseButton).Hover()
+            E<TextureButton>().Class(DefaultWindow.StyleClassWindowCloseButton).ParentOf(E<TextureRect>())
+                .Prop(TextureRect.StylePropertyTexture, WindowTextures[2])
+                .Prop(TextureRect.StylePropertyTextureSizeTarget, new Vector2(32, 32)),
+
+            E<TextureButton>().Hover().Class(DefaultWindow.StyleClassWindowCloseButton).ParentOf(E<TextureRect>())
                 .Prop(TextureButton.StylePropertyTexture, WindowTextures[3]),
-            Element().Class(DefaultWindow.StyleClassWindowCloseButton).Pressed()
+            E<TextureButton>().Pressed().Class(DefaultWindow.StyleClassWindowCloseButton).ParentOf(E<TextureRect>())
                 .Prop(TextureButton.StylePropertyTexture, WindowTextures[1]),
         };
     }

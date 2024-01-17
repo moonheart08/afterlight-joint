@@ -4,6 +4,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Animations;
+using Robust.Shared.Input;
 
 namespace Content.Client._AL.UI.Widgets;
 
@@ -40,11 +41,53 @@ public sealed class PinboardContainer : Container
         }
     };
 
+    public bool DoCursorScroll = true;
+
+    private bool _dragging = false;
+
+    protected override void KeyBindDown(GUIBoundKeyEventArgs args)
+    {
+        base.KeyBindDown(args);
+
+        if (args.Function != EngineKeyFunctions.UIClick)
+        {
+            return;
+        }
+
+        _dragging = true;
+    }
+
+    protected override void KeyBindUp(GUIBoundKeyEventArgs args)
+    {
+        base.KeyBindDown(args);
+
+        if (args.Function != EngineKeyFunctions.UIClick)
+        {
+            return;
+        }
+
+        _dragging = false;
+    }
+
+    protected override void MouseMove(GUIMouseMoveEventArgs args)
+    {
+        base.MouseMove(args);
+
+        if (!_dragging || !DoCursorScroll)
+            return;
+
+        ScrollLocation += args.Relative;
+        InvalidateArrange();
+    }
+
     public PinboardContainer()
     {
         RectClipContent = true;
+        MouseFilter = MouseFilterMode.Stop;
         //PlayAnimation(Zoomies, "glonk");
     }
+
+
 
     protected override Vector2 MeasureOverride(Vector2 availableSize)
     {
