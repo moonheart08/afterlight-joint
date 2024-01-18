@@ -111,6 +111,11 @@ public sealed class PinboardContainer : Container
         return finalSize;
     }
 
+    protected override void Draw(DrawingHandleScreen handle)
+    {
+        base.Draw(handle);
+    }
+
     protected override void RenderChildOverride(IRenderHandle renderHandle, ref int total, Control control, Vector2i position, Color modulate,
         UIBox2i? scissorBox, Matrix3 coordinateTransform)
     {

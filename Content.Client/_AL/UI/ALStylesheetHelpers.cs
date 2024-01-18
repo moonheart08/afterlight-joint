@@ -71,17 +71,30 @@ public static class ALStylesheetHelpers
         return new(selector, lum, SelectorLuminance.SelectorMode.GreaterThan);
     }
 
-    public static MutableSelectorLuminance DarkerThan(this MutableSelector selector, float lum)
+    public static MutableSelectorLuminance BgDarkerThan(this MutableSelector selector, float lum)
     {
         return new(selector, lum, SelectorLuminance.SelectorMode.LessThan);
+    }
+
+    public static MutableSelectorNeighbour Above(this MutableSelector selector, MutableSelector other, int by = 1)
+    {
+        return new MutableSelectorNeighbour(selector, other, by, SelectorNeighbour.NeighbourDirection.Below);
+    }
+
+    public static MutableSelectorNeighbour Below(this MutableSelector selector, MutableSelector other, int by = 1)
+    {
+        return new MutableSelectorNeighbour(selector, other, by, SelectorNeighbour.NeighbourDirection.Above);
+    }
+
+    public static MutableSelectorNeighbour Nearby(this MutableSelector selector, MutableSelector other, int by = 1)
+    {
+        return new MutableSelectorNeighbour(selector, other, by, SelectorNeighbour.NeighbourDirection.Either);
     }
 
     public static T AndIf<T>(this T inp, bool v, Func<T, T> fn)
     {
         if (v)
-        {
             return fn(inp);
-        }
 
         return inp;
     }
@@ -89,9 +102,7 @@ public static class ALStylesheetHelpers
     public static T OrIf<T>(this T inp, bool v, T other)
     {
         if (v)
-        {
             return other;
-        }
 
         return inp;
     }

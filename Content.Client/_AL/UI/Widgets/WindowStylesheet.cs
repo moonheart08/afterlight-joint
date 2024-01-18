@@ -13,7 +13,6 @@ public sealed class WindowStylesheet : BaseSubsheet
 {
     public override StyleRule[] GetRules(BaseStyle origin)
     {
-        var theme = origin.UserInterface.CurrentTheme;
         var (WindowTextures, _, _) =
             origin.LoadIndefiniteNinePatchSet($"{origin.FileRoot}/window_cross_{{0}}.png", 0);
         return new StyleRule[]
