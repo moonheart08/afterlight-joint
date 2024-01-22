@@ -27,6 +27,9 @@ public sealed class WindowStylesheet : BaseSubsheet
                 .Prop(TextureButton.StylePropertyTexture, WindowTextures[3]),
             E<TextureButton>().Pressed().Class(DefaultWindow.StyleClassWindowCloseButton).ParentOf(E<TextureRect>())
                 .Prop(TextureButton.StylePropertyTexture, WindowTextures[1]),
+
+            E<TextureRect>().Class("WindowIcon")
+                .Prop(TextureRect.StylePropertyTextureSizeTarget, new Vector2(28, 28)),
         };
     }
 }

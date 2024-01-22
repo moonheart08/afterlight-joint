@@ -26,6 +26,8 @@ public class EnumSelector : OptionButton
         OptionStyleClasses.Add(Style.EnumSelectorOptionClass);
     }
 
+
+
     public Enum Selected => (Enum) SelectedMetadata!;
 
     public T GetSelected<T>()

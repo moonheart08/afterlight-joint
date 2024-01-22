@@ -13,14 +13,16 @@
                             Text="{rt:Loc 'ui-optionsmenu-uitab-usedepth'}"
                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-usedepth-tooltip'}"/>
                         <smart:FieldCheckBox TargetField="UseDepth"
-                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-usedepth-tooltip'}"/>
+                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-usedepth-tooltip'}"
+                                             HorizontalAlignment="Right"/>
                     </HGrowStack>
                     <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
                         <InputLabel
                             Text="{rt:Loc 'ui-optionsmenu-uitab-highcontrastdepth'}"
                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrastdepth-tooltip'}"/>
                         <smart:FieldCheckBox TargetField="HighContrastExtrude"
-                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrastdepth-tooltip'}"/>
+                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrastdepth-tooltip'}"
+                                             HorizontalAlignment="Right"/>
                     </HGrowStack>
                 </VStack>
                 <VStack HorizontalExpand="True">
@@ -29,7 +31,8 @@
                             Text="{rt:Loc 'ui-optionsmenu-uitab-highcontrasttext'}"
                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrasttext-tooltip'}"/>
                         <smart:FieldCheckBox TargetField="HighContrastText"
-                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrasttext-tooltip'}"/>
+                                             ToolTip="{rt:Loc 'ui-optionsmenu-uitab-highcontrasttext-tooltip'}"
+                                             HorizontalAlignment="Right"/>
                     </HGrowStack>
                 </VStack>
             </HGrowStack>
@@ -37,7 +40,7 @@
         <smart:FieldGroup Name="UICVarsGroup" Type="tabs:UICVarsConfig">
             <HGrowStack>
                 <VStack HorizontalExpand="True">
-                    <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
+                    <HGrowStack ExpandInner="True">
                         <InputLabel Text="{rt:Loc 'ui-optionsmenu-uitab-uiscale'}"
                                     ToolTip="{rt:Loc 'ui-optionsmenu-uitab-uiscale-tooltip'}"/>
                         <smart:FieldEnumSelector TargetField="Scale"
@@ -45,8 +48,11 @@
                     </HGrowStack>
                 </VStack>
                 <VStack HorizontalExpand="True">
-                    <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
-
+                    <HGrowStack ExpandInner="True">
+                        <InputLabel Text="{rt:Loc 'ui-optionsmenu-uitab-hudlayout'}"
+                                    ToolTip="{rt:Loc 'ui-optionsmenu-uitab-hudlayout-tooltip'}"/>
+                        <smart:FieldEnumSelector TargetField="Layout"
+                                                 ToolTip="{rt:Loc 'ui-optionsmenu-uitab-hudlayout-tooltip'}"/>
                     </HGrowStack>
                 </VStack>
             </HGrowStack>

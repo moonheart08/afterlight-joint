@@ -19,3 +19,7 @@ ui-enumselector-UIScale-Scale225 = 225%
 ui-enumselector-UIScale-Scale250 = 250%
 ui-enumselector-UIScale-Scale275 = 275%
 ui-enumselector-UIScale-Scale300 = 300%
+ui-optionsmenu-uitab-hudlayout = HUD Layout*
+ui-optionsmenu-uitab-hudlayout-tooltip = Changes the layout of the game HUD.
+ui-enumselector-ScreenType-Default = Floating
+ui-enumselector-ScreenType-Separated = Split

@@ -13,6 +13,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Reflection;
 using Robust.Shared.Sandboxing;
+using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 using static Content.Client._AL.UI.ALStylesheetHelpers;
 
@@ -101,6 +102,8 @@ public abstract class BaseStyle
                 .Prop(Slider.StylePropertyForeground, LoadTexture($"{FileRoot}/slider_outline.png").ToPatchStyleBox(14).Modulate(SecondaryPalette[4]))
                 .Prop(Slider.StylePropertyGrabber, LoadTexture($"{FileRoot}/slider_grabber.png").ToPatchStyleBox(14).Zoom(2))
                 .Prop(Slider.StylePropertyFill, LoadTexture($"{FileRoot}/slider_fill.png").ToPatchStyleBox(14).Modulate(PrimaryPalette[1])),
+            E<TextureButton>().ParentOf(E<TextureRect>())
+                .Prop(TextureRect.StylePropertyTextureStretch, TextureRect.StretchMode.KeepCentered)
         }
             // Load all the stylesheet pieces.
             .Concat(GetRulesFromAttribute<StylesheetAttribute>()).ToArray();
@@ -109,6 +112,16 @@ public abstract class BaseStyle
 
 
     #region Texture loading utilities
+
+    public bool TryLoadTexture(string target, [NotNullWhen(true)] out Texture? texture)
+    {
+        var success = ResourceCache.TryGetResource<TextureResource>(new ResPath(target), out var res);
+        texture = null;
+        if (res is null)
+            return success;
+        texture = res;
+        return success;
+    }
 
     public Texture LoadTexture(string target)
     {

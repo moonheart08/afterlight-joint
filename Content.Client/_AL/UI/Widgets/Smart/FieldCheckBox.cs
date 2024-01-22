@@ -12,6 +12,7 @@ public sealed class FieldCheckBox : CheckBox
     public FieldCheckBox()
     {
         OnToggled += OnOnToggled;
+        Margin = new Thickness(2);
     }
 
     protected override void Parented(Control newParent)

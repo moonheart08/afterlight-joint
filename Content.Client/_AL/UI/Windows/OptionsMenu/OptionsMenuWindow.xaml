@@ -5,7 +5,8 @@
                                xmlns:smart="clr-namespace:Content.Client._AL.UI.Widgets.Smart"
                                MinHeight="500"
                                MinWidth="700"
-                               Title="Options">
+                               Title="Options"
+                               Resizable="False">
     <HStack>
         <RadioGroup Name="TabSelect">
             <VBackgroundPanel>

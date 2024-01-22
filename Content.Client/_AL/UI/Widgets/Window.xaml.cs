@@ -13,11 +13,20 @@ public partial class Window : BaseWindow, IDepthMeasure<BackgroundPanel>
 {
     private const int DRAG_MARGIN_SIZE = 7;
 
+    public static string GetWindowIconStyle(Type t)
+    {
+        return $"WindowIcon{t.Name}";
+    }
+
     public Window()
     {
         RobustXamlLoader.Load(this);
         XamlChildren = ContentsContainer.Children;
         CloseButton.OnPressed += CloseButtonPressed;
+        if (GetType() != typeof(Window)) // We're a subclass.
+        {
+            WindowIcon.AddStyleClass(GetWindowIconStyle(GetType()));
+        }
     }
 
     public string? Title

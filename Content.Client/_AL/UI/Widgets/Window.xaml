@@ -7,11 +7,13 @@
     <BoxContainer Orientation="Vertical">
         <Control>
             <PanelContainer StyleClasses="WindowHeadingBackground" />
-            <BoxContainer Margin="8 2 8 0" Orientation="Horizontal">
+            <BoxContainer Margin="8 2 8 2" Orientation="Horizontal">
+                <TextureRect Name="WindowIcon" Margin="0 0 8 0" VerticalAlignment="Center" StyleClasses="WindowIcon"
+                             Stretch="KeepCentered"/>
                 <Label Name="WindowTitle"
                        HorizontalExpand="True" VAlign="Center" StyleClasses="FancyWindowTitle" />
                 <TextureButton Name="CloseButton" StyleClasses="windowCloseButton"
-                               VerticalAlignment="Center" />
+                               VerticalAlignment="Center"/>
             </BoxContainer>
         </Control>
         <PanelContainer StyleClasses="WindowContentsBackground" Access="Public" Name="ContentsContainer" Margin="0 2 0 -2" VerticalExpand="true"/>
