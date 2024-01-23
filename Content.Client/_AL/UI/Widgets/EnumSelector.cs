@@ -26,8 +26,6 @@ public class EnumSelector : OptionButton
         OptionStyleClasses.Add(Style.EnumSelectorOptionClass);
     }
 
-
-
     public Enum Selected => (Enum) SelectedMetadata!;
 
     public T GetSelected<T>()
@@ -71,7 +69,7 @@ public class EnumSelector : OptionButton
     public override void ButtonOverride(Robust.Client.UserInterface.Controls.Button button)
     {
         //TODO: This really should be a stylesheet thing but that's a refactor I don't want to take upon myself right now.
-        button.Margin = new Thickness(2);
+        button.Margin = new Thickness(4);
     }
 }
 

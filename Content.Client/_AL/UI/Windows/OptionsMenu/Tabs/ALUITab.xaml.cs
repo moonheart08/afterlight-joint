@@ -48,7 +48,6 @@ public sealed partial class ALUITab : VGrowStack
     {
         TestPane.Stylesheet = new ALStyle(_cache, (ALStyleConfig)StyleConfigGroup.Set).Stylesheet;
     }
-
 }
 
 

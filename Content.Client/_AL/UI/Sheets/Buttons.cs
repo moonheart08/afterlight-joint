@@ -1,4 +1,5 @@
 ﻿using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 using static Content.Client._AL.UI.ALStylesheetHelpers;
 
@@ -25,6 +26,8 @@ public sealed class Buttons : BaseSubsheet
             Button().Negative().Hover().Prop(Style.StyleBox, origin.ButtonNegativeBackgrounds[3]),
             Button().Negative().Pressed().Prop(Style.StyleBox, origin.ButtonNegativeBackgrounds[1]),
             Button().Negative().Disabled().Prop(Style.StyleBox, origin.ButtonNegativeBackgrounds[0]),
+            E<Popup>().Class(OptionButton.StyleClassPopup).ParentOf(E<PanelContainer>())
+                .Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0])
         };
     }
 }

@@ -7,7 +7,8 @@ using static Content.Client._AL.UI.ALStylesheetHelpers;
 
 namespace Content.Client._AL.UI.Widgets;
 
-public sealed class InputLabel : Text
+[Virtual]
+public class InputLabel : Text
 {
 }
 
