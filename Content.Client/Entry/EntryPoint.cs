@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -34,6 +35,7 @@ using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Reflection;
 using Robust.Shared.Replays;
 
 namespace Content.Client.Entry
@@ -70,6 +72,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly IReplayLoadManager _replayLoad = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private readonly IReflectionManager _reflection = default!;
 
         public override void Init()
         {
@@ -205,7 +208,7 @@ namespace Content.Client.Entry
                     state.SetDisconnected();
                 }
             }
-            else
+            else if (!_reflection.Assemblies.Any(x => x.FullName?.Contains("ALED") ?? false))
             {
                 _stateManager.RequestStateChange<MainScreen>();
             }

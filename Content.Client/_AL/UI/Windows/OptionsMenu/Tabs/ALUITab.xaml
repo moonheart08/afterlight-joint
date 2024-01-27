@@ -1,37 +1,36 @@
 ﻿<tabs:ALUITab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
-              xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+              xmlns="https://afterlight3129.net"
               xmlns:ui="clr-namespace:Content.Client._AL.UI"
-              xmlns:smart="clr-namespace:Content.Client._AL.UI.Widgets.Smart"
               HorizontalExpand="True">
     <VGrowStack>
-        <smart:FieldGroup Name="StyleConfigGroup" Type="ui:ALStyleConfig">
+        <FieldGroup Name="StyleConfigGroup" Type="ui:ALStyleConfig">
             <GrowGrid Columns="2">
                 <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
-                    <smart:FieldInputLabel TargetField="UseDepth"/>
-                    <smart:FieldCheckBox TargetField="UseDepth" HorizontalAlignment="Right"/>
+                    <FieldInputLabel TargetField="UseDepth"/>
+                    <FieldCheckBox TargetField="UseDepth" HorizontalAlignment="Right"/>
                 </HGrowStack>
                 <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
-                    <smart:FieldInputLabel TargetField="HighContrastExtrude"/>
-                    <smart:FieldCheckBox TargetField="HighContrastExtrude" HorizontalAlignment="Right"/>
+                    <FieldInputLabel TargetField="HighContrastExtrude"/>
+                    <FieldCheckBox TargetField="HighContrastExtrude" HorizontalAlignment="Right"/>
                 </HGrowStack>
                 <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">
-                    <smart:FieldInputLabel TargetField="HighContrastText"/>
-                    <smart:FieldCheckBox TargetField="HighContrastText" HorizontalAlignment="Right"/>
+                    <FieldInputLabel TargetField="HighContrastText"/>
+                    <FieldCheckBox TargetField="HighContrastText" HorizontalAlignment="Right"/>
                 </HGrowStack>
             </GrowGrid>
-        </smart:FieldGroup>
-        <smart:FieldGroup Name="UICVarsGroup" Type="tabs:UICVarsConfig">
+        </FieldGroup>
+        <FieldGroup Name="UICVarsGroup" Type="tabs:UICVarsConfig">
             <GrowGrid Columns="2">
                 <HGrowStack ExpandInner="True">
-                    <smart:FieldInputLabel TargetField="Scale" VAlign="Center"/>
-                    <smart:FieldEnumSelector TargetField="Scale"/>
+                    <FieldInputLabel TargetField="Scale" VAlign="Center"/>
+                    <FieldEnumSelector TargetField="Scale"/>
                 </HGrowStack>
                 <HGrowStack ExpandInner="True">
-                    <smart:FieldInputLabel TargetField="Layout" VAlign="Center"/>
-                    <smart:FieldEnumSelector TargetField="Layout"/>
+                    <FieldInputLabel TargetField="Layout" VAlign="Center"/>
+                    <FieldEnumSelector TargetField="Layout"/>
                 </HGrowStack>
             </GrowGrid>
-        </smart:FieldGroup>
+        </FieldGroup>
         <VFill/>
         <HBackgroundPanel VerticalAlignment="Bottom" Name="TestPane">
             <InfoBox Header="Demo" MaxWidth="200">

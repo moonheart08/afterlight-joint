@@ -8,7 +8,8 @@ using Robust.Shared.Input;
 
 namespace Content.Client._AL.UI.Widgets;
 
-public sealed class PinboardContainer : Container
+[Virtual]
+public class PinboardContainer : Container
 {
     public static readonly AttachedProperty<Vector2> PinLocation = AttachedProperty<Vector2>.Create("PinLocation", typeof(PinboardContainer), defaultValue: Vector2.Zero);
 
@@ -16,7 +17,13 @@ public sealed class PinboardContainer : Container
     public static Vector2 GetPinLocation(Control c)
         => c.GetValue(PinLocation);
     public static void SetPinLocation(Control c, Vector2 loc)
-        => c.SetValue(PinLocation, loc);
+    {
+        c.SetValue(PinLocation, loc);
+        if (c is IPinboardAware aware)
+            aware.PositionUpdated(loc);
+
+        c.Parent?.InvalidateArrange();
+    }
 
     public Vector2 ScrollLocation = Vector2.Zero;
     [ViewVariables(VVAccess.ReadWrite)]

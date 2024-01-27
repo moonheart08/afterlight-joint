@@ -9,6 +9,8 @@ public class PinboardDraggableContainer : Container
 {
     private bool _dragging;
 
+    public bool Enabled { get; set; } = true;
+
     public PinboardDraggableContainer()
     {
         MouseFilter = MouseFilterMode.Stop;
@@ -17,6 +19,9 @@ public class PinboardDraggableContainer : Container
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
     {
         base.KeyBindDown(args);
+
+        if (!Enabled)
+            return;
 
         if (args.Function != EngineKeyFunctions.UIClick)
         {
@@ -42,14 +47,17 @@ public class PinboardDraggableContainer : Container
     {
         base.MouseMove(args);
 
+        if (!Enabled)
+            return;
+
         if (!_dragging)
             return;
 
-        var loc = GetValue(PinboardContainer.PinLocation);
+        var loc = PinboardContainer.GetPinLocation(this);
 
         loc += args.Relative;
 
-        SetValue(PinboardContainer.PinLocation, loc);
+        PinboardContainer.SetPinLocation(this, loc);
         Parent?.InvalidateArrange();
     }
 

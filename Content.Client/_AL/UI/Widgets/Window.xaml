@@ -1,6 +1,6 @@
-﻿<al:Window xmlns="https://spacestation14.io"
-                               xmlns:al="clr-namespace:Content.Client._AL.UI.Widgets"
-                               MouseFilter="Stop"
+﻿<al:Window  xmlns="https://spacestation14.io"
+            xmlns:al="clr-namespace:Content.Client._AL.UI.Widgets"
+            MouseFilter="Stop"
             MinWidth="200" MinHeight="150">
     <PanelContainer StyleClasses="WindowBackground" />
 

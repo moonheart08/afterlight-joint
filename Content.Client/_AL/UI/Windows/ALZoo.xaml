@@ -1,4 +1,4 @@
-﻿<windows:ALZoo xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+﻿<windows:ALZoo xmlns="https://afterlight3129.net"
         xmlns:rt="https://spacestation14.io"
         xmlns:windows="clr-namespace:Content.Client._AL.UI.Windows"
         Title="AL Control Zoo">
