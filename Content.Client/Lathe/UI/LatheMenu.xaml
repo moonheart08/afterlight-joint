@@ -1,146 +1,87 @@
-<DefaultWindow
-    xmlns="https://spacestation14.io"
+<Window
+    xmlns:rt="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:ui="clr-namespace:Content.Client.Materials.UI"
-    Title="{Loc 'lathe-menu-title'}"
+    xmlns="https://afterlight3129.net"
+    Title="{rt:Loc 'lathe-menu-title'}"
     MinSize="550 450"
     SetSize="750 500">
-    <BoxContainer
-        Orientation="Horizontal"
-        VerticalExpand="True"
-        HorizontalExpand="True"
-        SeparationOverride="5">
+    <HGrowStack VerticalExpand="True" SeparationOverride="5">
         <!-- Left Col-->
-        <BoxContainer
-            VerticalExpand="True"
-            HorizontalExpand="True">
-            <BoxContainer
-                Orientation="Vertical"
-                VerticalExpand="True"
-                HorizontalExpand="True"
-                SeparationOverride="5">
-                <BoxContainer Orientation="Horizontal"
+        <VGrowStack HorizontalExpand="True">
+            <HGrowStack>
+                <rt:LineEdit
+                    Name="SearchBar"
+                    PlaceHolder="{rt:Loc 'lathe-menu-search-designs'}"
                     HorizontalExpand="True">
-                    <LineEdit
-                        Name="SearchBar"
-                        PlaceHolder="{Loc 'lathe-menu-search-designs'}"
-                        HorizontalExpand="True">
-                    </LineEdit>
-                    <Button
-                        Name="FilterButton"
-                        Text="{Loc 'lathe-menu-search-filter'}"
-                        TextAlign="Center"
-                        Margin="5 0 0 0"
-                        Disabled="True"
-                        StyleClasses="ButtonSquare">
-                    </Button>
-                </BoxContainer>
-                <BoxContainer Orientation="Vertical"
-                    MinHeight="225"
-                    VerticalExpand="True"
+                </rt:LineEdit>
+                <Button
+                    Name="FilterButton"
+                    Text="{rt:Loc 'lathe-menu-search-filter'}"
+                    TextAlign="Center"
+                    Disabled="True"
+                    StyleClasses="ButtonSquare">
+                </Button>
+            </HGrowStack>
+            <VScrollable VerticalExpand="True" MinHeight="225" HorizontalExpand="True">
+                <rt:BoxContainer
+                    Name="RecipeList"
+                    Orientation="Vertical"
                     HorizontalExpand="True"
-                    SizeFlagsStretchRatio="4">
-                    <PanelContainer VerticalExpand="True">
-                        <PanelContainer.PanelOverride>
-                            <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
-                        </PanelContainer.PanelOverride>
-                        <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
-                            <BoxContainer
-                                Name="RecipeList"
-                                Orientation="Vertical"
-                                HorizontalExpand="True"
-                                VerticalExpand="True"
-                                RectClipContent="True">
-                            </BoxContainer>
-                        </ScrollContainer>
-                    </PanelContainer>
-                </BoxContainer>
-                <BoxContainer Orientation="Horizontal"
-                    HorizontalExpand="True">
-                    <Label Margin="8 0 8 0" Text="{Loc 'lathe-menu-amount'}" />
-                    <LineEdit
-                        Name="AmountLineEdit"
-                        PlaceHolder="0"
-                        Text="1"
-                        HorizontalExpand="True" />
-                </BoxContainer>
-            </BoxContainer>
-        </BoxContainer>
-        <BoxContainer MinWidth="5"/>
+                    VerticalExpand="True"
+                    RectClipContent="True">
+                </rt:BoxContainer>
+            </VScrollable>
+            <HGrowStack HorizontalExpand="True">
+                <Text Margin="8 0 8 0" Text="{rt:Loc 'lathe-menu-amount'}" />
+                <rt:LineEdit
+                    Name="AmountLineEdit"
+                    PlaceHolder="0"
+                    Text="1"
+                    HorizontalExpand="True" />
+            </HGrowStack>
+        </VGrowStack>
         <!-- Right Col-->
-        <BoxContainer
-            Orientation="Vertical"
-            VerticalExpand="True"
-            HorizontalExpand="True"
-            SeparationOverride="5">
-            <BoxContainer Orientation="Vertical" MinHeight="225">
-                <BoxContainer
-                    Orientation="Horizontal"
-                    Align="End"
-                    HorizontalExpand="True">
+        <VBackgroundPanel HorizontalExpand="True" Margin="0" InnerMargin="0">
+            <VBackgroundPanel MinHeight="225" Margin="-3 -3 -3 4" StyleClasses="DepthPanel">
+                <HGrowStack Align="End">
                     <Button
                         Name="ServerListButton"
-                        Text="{Loc 'lathe-menu-server-list'}"
+                        Text="{rt:Loc 'lathe-menu-server-list'}"
                         TextAlign="Center"
                         Mode="Press">
                     </Button>
-                </BoxContainer>
-                <Label Text="{Loc 'lathe-menu-queue-title'}" Margin="5 5 5 5" HorizontalAlignment="Center"/>
-                <BoxContainer
-                    Name="FabricatingContainer"
-                    Orientation="Horizontal"
-                    HorizontalExpand="True"
-                    SizeFlagsStretchRatio="2">
-                    <PanelContainer
-                        VerticalExpand="True"
-                        HorizontalExpand="True"
-                        SizeFlagsStretchRatio="3">
-                        <PanelContainer.PanelOverride>
-                            <gfx:StyleBoxFlat BackgroundColor="#408040" />
-                        </PanelContainer.PanelOverride>
-                        <Label
+                </HGrowStack>
+                <Text Text="{rt:Loc 'lathe-menu-queue-title'}" HorizontalAlignment="Center"/>
+                <HGrowStack Name="FabricatingContainer">
+                        <Text
                             RectClipContent="False"
                             HorizontalAlignment="Left"
-                            Margin="5 0 0 0"
-                            Text="{Loc 'lathe-menu-fabricating-message'}">
-                        </Label>
-                        <TextureRect
+                            Text="{rt:Loc 'lathe-menu-fabricating-message'}"/>
+                        <rt:TextureRect
                             Name="Icon"
                             HorizontalExpand="True"
                             SizeFlagsStretchRatio="2"
-                            Margin="100 0 0 0">
-                        </TextureRect>
-                        <Label
+                            Margin="100 0 0 0"/>
+                        <Text
                             Name="NameLabel"
                             RectClipContent="True"
                             HorizontalAlignment="Left"
-                            Margin="130 0 0 0">
-                        </Label>
-                    </PanelContainer>
-                </BoxContainer>
-                <ItemList
+                            Margin="130 0 0 0"/>
+                </HGrowStack>
+                <rt:ItemList
                     Name="QueueList"
                     VerticalExpand="True"
                     SizeFlagsStretchRatio="3"
                     SelectMode="None">
-                </ItemList>
-            </BoxContainer>
-            <BoxContainer
-            VerticalExpand="True"
-            HorizontalExpand="True"
-            Orientation="Vertical"
-            MinHeight="225"
-            >
-            <Label Text="{Loc 'lathe-menu-materials-title'}" Margin="5 5 5 5" HorizontalAlignment="Center"/>
-            <BoxContainer
-                Orientation="Vertical"
-                VerticalExpand="True"
-                HorizontalExpand="True">
-                <ui:MaterialStorageControl Name="MaterialsList" SizeFlagsStretchRatio="8"/>
-            </BoxContainer>
-        </BoxContainer>
-        </BoxContainer>
-
-    </BoxContainer>
-
-</DefaultWindow>
+                </rt:ItemList>
+            </VBackgroundPanel>
+            <VGrowStack HorizontalExpand="True" MinHeight="225">
+                <Text Text="{rt:Loc 'lathe-menu-materials-title'}" HorizontalAlignment="Center"/>
+                <VGrowStack HorizontalExpand="True">
+                    <ui:MaterialStorageControl Name="MaterialsList" SizeFlagsStretchRatio="8"/>
+                </VGrowStack>
+            </VGrowStack>
+        </VBackgroundPanel>
+    </HGrowStack>
+</Window>

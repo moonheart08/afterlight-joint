@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._AL.UI.Widgets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Atmos;
 using Content.Shared.Temperature;
@@ -14,7 +15,7 @@ using Direction = Robust.Shared.Maths.Direction;
 namespace Content.Client.Atmos.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class GasAnalyzerWindow : DefaultWindow
+    public sealed partial class GasAnalyzerWindow : Window
     {
         public GasAnalyzerWindow()
         {

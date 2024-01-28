@@ -1,8 +1,9 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
-            xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-            Title="{Loc 'reagent-dispenser-bound-user-interface-title'}"
-            SetSize="620 450"
-            MinSize="620 450">
+﻿<widgets:Window xmlns="https://spacestation14.io"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                xmlns:widgets="https://afterlight3129.net"
+                Title="{Loc 'reagent-dispenser-bound-user-interface-title'}"
+                SetSize="620 450"
+                MinSize="620 450">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'reagent-dispenser-window-amount-to-dispense-label'}"/>
@@ -50,4 +51,4 @@
             </PanelContainer>
         </ScrollContainer>
     </BoxContainer>
-</DefaultWindow>
+</widgets:Window>

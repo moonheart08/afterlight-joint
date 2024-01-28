@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client._AL.UI.Widgets;
 using Content.Client.Stylesheets;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Reagent;
@@ -9,6 +10,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Button = Robust.Client.UserInterface.Controls.Button;
 
 namespace Content.Client.Chemistry.UI
 {
@@ -16,7 +18,7 @@ namespace Content.Client.Chemistry.UI
     /// Client-side UI used to control a <see cref="ReagentDispenserComponent"/>.
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class ReagentDispenserWindow : DefaultWindow
+    public sealed partial class ReagentDispenserWindow : Window
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         public event Action<BaseButton.ButtonEventArgs, DispenseReagentButton>? OnDispenseReagentButtonPressed;

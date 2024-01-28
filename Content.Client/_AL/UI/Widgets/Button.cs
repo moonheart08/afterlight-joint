@@ -19,6 +19,8 @@ public class Button : ContainerButton
     [ViewVariables]
     public string? Text { get => TextWidget.Text; set => TextWidget.Text = value; }
 
+    public Label.AlignMode TextAlign { set => TextWidget.Align = value; }
+
     public string? GroupName { get; set; }
 
 

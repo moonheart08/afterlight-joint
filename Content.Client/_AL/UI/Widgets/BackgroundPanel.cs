@@ -54,6 +54,12 @@ public sealed class VBackgroundPanel : BackgroundPanel
 {
     public readonly VStack Inner = new() {Margin = new Thickness(4)};
 
+    public Thickness InnerMargin
+    {
+        get => Inner.Margin;
+        set => Inner.Margin = value;
+    }
+
     public VBackgroundPanel()
     {
         Margin = new Thickness(2);

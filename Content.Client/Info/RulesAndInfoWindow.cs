@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._AL.UI.Widgets;
 using Content.Client.UserInterface.Systems.EscapeMenu;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
@@ -9,7 +10,7 @@ using Robust.Shared.ContentPack;
 
 namespace Content.Client.Info
 {
-    public sealed class RulesAndInfoWindow : DefaultWindow
+    public sealed class RulesAndInfoWindow : Window
     {
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly RulesManager _rules = default!;
@@ -34,7 +35,7 @@ namespace Content.Client.Info
             AddSection(rulesList, _rules.RulesSection());
             PopulateTutorial(tutorialList);
 
-            Contents.AddChild(rootContainer);
+            ContentsContainer.AddChild(rootContainer);
 
             SetSize = new Vector2(650, 650);
         }

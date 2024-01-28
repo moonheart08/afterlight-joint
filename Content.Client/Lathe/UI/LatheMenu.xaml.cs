@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Text;
+using Content.Client._AL.UI.Widgets;
 using Content.Client.Materials;
 using Content.Shared.Lathe;
 using Content.Shared.Materials;
@@ -14,7 +15,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client.Lathe.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class LatheMenu : DefaultWindow
+public sealed partial class LatheMenu : Window
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

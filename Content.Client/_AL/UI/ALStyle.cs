@@ -53,6 +53,7 @@ public sealed class ALStyle : BaseStyle
 
         var ourRules = new StyleRule[]
         {
+            Element().Class("DepthPanel").Prop(Style.BackgroundPanelStyleboxes, PanelBackgrounds.Select(x => x.Extrude(WindowExtrusion)).ToArray()),
             Element().Class(Style.WindowBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[2]),
             Element().Class(Style.WindowContentsBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[0].Extrude(WindowExtrusion, modulation: extrusionMult)),
 

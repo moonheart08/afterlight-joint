@@ -25,6 +25,17 @@ public partial class ChatBox : UIWidget
 
     public bool Main { get; set; }
 
+    public bool HasBackground
+    {
+        set
+        {
+            if (value)
+                Background.AddStyleClass("HasBackground");
+            else
+                Background.RemoveStyleClass("HasBackground");
+        }
+    }
+
     public ChatSelectChannel SelectedChannel => ChatInput.ChannelSelector.SelectedChannel;
 
     public ChatBox()

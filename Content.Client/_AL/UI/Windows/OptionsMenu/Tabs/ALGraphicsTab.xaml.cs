@@ -7,3 +7,8 @@ namespace Content.Client._AL.UI.Windows.OptionsMenu.Tabs;
 public sealed partial class ALGraphicsTab : VGrowStack
 {
 }
+
+public enum LightmapScale
+{
+
+}
