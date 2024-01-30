@@ -1,4 +1,13 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿/*
+ * HALT!
+ * This file is NOT under the standard repo license.
+ * ALL RIGHTS RESERVED Kaylie N. 2024
+ * You may NOT use this content in non-source (i.e. binaries) reproductions of this content.
+ *
+ * In plainer words, you cannot use this in your fork or codebase, please write your own theme.
+ */
+
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using Content.Client._AL.UI.Styleboxes;
