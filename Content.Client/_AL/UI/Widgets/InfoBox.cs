@@ -2,7 +2,7 @@
 
 namespace Content.Client._AL.UI.Widgets;
 
-public sealed class InfoBox : BackgroundPanel
+public sealed class InfoBox : BorderedPanel
 {
     public Text Label { get; } = new();
 

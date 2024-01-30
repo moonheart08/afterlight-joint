@@ -9,7 +9,7 @@
                                Resizable="False">
     <HStack>
         <RadioGroup Name="TabSelect">
-            <VBackgroundPanel>
+            <VBorderedPanel>
                 <RadioLabelButton Name="Graphics"/>
                 <RadioLabelButton Name="UI"/>
                 <RadioLabelButton Name="Audio"/>
@@ -20,7 +20,7 @@
                     <decorative:BarPatch Count="28"/>
                 </VGrowStack>
                 <RadioLabelButton Name="Credits"/>
-            </VBackgroundPanel>
+            </VBorderedPanel>
         </RadioGroup>
         <VBar/>
         <VStack HorizontalExpand="True">

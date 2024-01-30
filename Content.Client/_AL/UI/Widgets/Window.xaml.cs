@@ -9,7 +9,7 @@ namespace Content.Client._AL.UI.Widgets;
 
 [Virtual]
 [GenerateTypedNameReferences]
-public partial class Window : BaseWindow, IDepthMeasure<BackgroundPanel>
+public partial class Window : BaseWindow, IDepthMeasure<BorderedPanel>
 {
     private const int DRAG_MARGIN_SIZE = 7;
 

@@ -123,21 +123,20 @@ public class PinboardContainer : Container
         base.Draw(handle);
     }
 
-    protected override void RenderChildOverride(IRenderHandle renderHandle, ref int total, Control control, Vector2i position, Color modulate,
-        UIBox2i? scissorBox, Matrix3 coordinateTransform)
+    protected override void RenderChildOverride(ref ControlRenderArguments args, int childIndex, Vector2i pos)
     {
-        var screen = renderHandle.DrawingHandleScreen;
+        var screen = args.Handle.DrawingHandleScreen;
         var oldXform = screen.GetTransform();
         var xform = oldXform;
         var scale = Matrix3.CreateScale(Zoom, Zoom);
         xform.Multiply(scale);
         var posOffs = GlobalPixelPosition + (PixelSize / 2);
-        var relPos = position - posOffs;
-        position = (Vector2i)scale.Transform(relPos) + posOffs;
+        var relPos = pos - posOffs;
+        pos = (Vector2i)scale.Transform(relPos) + posOffs;
         screen.SetTransform(xform);
-        var ccxform = coordinateTransform;
+        var ccxform = args.CoordinateTransform;
         ccxform.Multiply(scale);
-        base.RenderChildOverride(renderHandle, ref total, control, position, modulate, scissorBox, ccxform);
+        base.RenderChildOverride(ref args, childIndex, pos);
         screen.SetTransform(oldXform);
     }
 }

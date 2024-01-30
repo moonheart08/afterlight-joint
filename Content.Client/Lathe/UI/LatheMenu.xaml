@@ -42,8 +42,8 @@
             </HGrowStack>
         </VGrowStack>
         <!-- Right Col-->
-        <VBackgroundPanel HorizontalExpand="True" Margin="0" InnerMargin="0">
-            <VBackgroundPanel MinHeight="225" Margin="-3 -3 -3 4" StyleClasses="DepthPanel">
+        <VBorderedPanel HorizontalExpand="True" Margin="0" InnerMargin="0">
+            <VBorderedPanel MinHeight="225" Margin="-3 -3 -3 4" StyleClasses="DepthPanel">
                 <HGrowStack Align="End">
                     <Button
                         Name="ServerListButton"
@@ -75,13 +75,13 @@
                     SizeFlagsStretchRatio="3"
                     SelectMode="None">
                 </rt:ItemList>
-            </VBackgroundPanel>
+            </VBorderedPanel>
             <VGrowStack HorizontalExpand="True" MinHeight="225">
                 <Text Text="{rt:Loc 'lathe-menu-materials-title'}" HorizontalAlignment="Center"/>
                 <VGrowStack HorizontalExpand="True">
                     <ui:MaterialStorageControl Name="MaterialsList" SizeFlagsStretchRatio="8"/>
                 </VGrowStack>
             </VGrowStack>
-        </VBackgroundPanel>
+        </VBorderedPanel>
     </HGrowStack>
 </Window>

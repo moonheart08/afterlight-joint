@@ -7,9 +7,9 @@ using Robust.Client.UserInterface.Controls;
 namespace Content.Client._AL.UI.Widgets;
 
 [Virtual]
-public class BackgroundPanel : PanelContainer, IDepthMeasure<BackgroundPanel>, IBrightnessAware
+public class BorderedPanel : PanelContainer, IDepthMeasure<BorderedPanel>, IBrightnessAware
 {
-    public BackgroundPanel()
+    public BorderedPanel()
     {
         Margin = new Thickness(2);
     }
@@ -17,19 +17,19 @@ public class BackgroundPanel : PanelContainer, IDepthMeasure<BackgroundPanel>, I
     protected override void StylePropertiesChanged()
     {
         base.StylePropertiesChanged();
-        ((IDepthMeasure<BackgroundPanel>)this).CheckChanges(this);
+        ((IDepthMeasure<BorderedPanel>)this).CheckChanges(this);
     }
 
     protected override void Parented(Control newParent)
     {
         base.Parented(newParent);
-        ((IDepthMeasure<BackgroundPanel>)this).CheckChanges(this);
+        ((IDepthMeasure<BorderedPanel>)this).CheckChanges(this);
     }
 
     protected override void EnteredTree()
     {
         base.EnteredTree();
-        ((IDepthMeasure<BackgroundPanel>)this).CheckChanges(this);
+        ((IDepthMeasure<BorderedPanel>)this).CheckChanges(this);
     }
 
     public virtual void OnDepthUpdate(int n)
@@ -50,7 +50,7 @@ public class BackgroundPanel : PanelContainer, IDepthMeasure<BackgroundPanel>, I
     }
 }
 
-public sealed class VBackgroundPanel : BackgroundPanel
+public sealed class VBorderedPanel : BorderedPanel
 {
     public readonly VStack Inner = new() {Margin = new Thickness(4)};
 
@@ -60,7 +60,7 @@ public sealed class VBackgroundPanel : BackgroundPanel
         set => Inner.Margin = value;
     }
 
-    public VBackgroundPanel()
+    public VBorderedPanel()
     {
         Margin = new Thickness(2);
         AddChild(Inner);
@@ -68,11 +68,11 @@ public sealed class VBackgroundPanel : BackgroundPanel
     }
 }
 
-public sealed class HBackgroundPanel : BackgroundPanel
+public sealed class HBorderedPanel : BorderedPanel
 {
     public readonly HStack Inner = new() {Margin = new Thickness(4)};
 
-    public HBackgroundPanel()
+    public HBorderedPanel()
     {
         Margin = new Thickness(2);
         AddChild(Inner);

@@ -32,12 +32,12 @@
             </GrowGrid>
         </FieldGroup>
         <VFill/>
-        <HBackgroundPanel VerticalAlignment="Bottom" Name="TestPane">
+        <HBorderedPanel VerticalAlignment="Bottom" Name="TestPane">
             <InfoBox Header="Demo" MaxWidth="200">
                 <RichText Text="This serves to preview the selected UI style. Options marked with an asterisk don't support preview."/>
             </InfoBox>
             <HFill/>
             <Keypad/>
-        </HBackgroundPanel>
+        </HBorderedPanel>
     </VGrowStack>
 </tabs:ALUITab>

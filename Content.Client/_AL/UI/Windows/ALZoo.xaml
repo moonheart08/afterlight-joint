@@ -4,19 +4,19 @@
         Title="AL Control Zoo">
     <VGrowStack>
         <HStack>
-            <VBackgroundPanel VerticalExpand="True">
+            <VBorderedPanel VerticalExpand="True">
                 <Text Text="Three!"/>
                 <HStack>
                     <Button Text="Click me!"/>
                     <Button Disabled="True" Text="Click me!"/>
                 </HStack>
 
-                <VBackgroundPanel>
+                <VBorderedPanel>
                     <InfoBox Header="Info!" MaxWidth="200">
                         <RichText Text="Something to see here, probably! This is an InfoBox control. For Info. Right?"/>
                     </InfoBox>
-                </VBackgroundPanel>
-            </VBackgroundPanel>
+                </VBorderedPanel>
+            </VBorderedPanel>
             <Keypad/>
         </HStack>
         <rt:Slider Value="25"/>
@@ -24,17 +24,17 @@
         <rt:Slider Value="75"/>
 
         <PinboardContainer MinSize="300 300">
-            <VBackgroundPanel PinboardContainer.PinLocation="100 100">
+            <VBorderedPanel PinboardContainer.PinLocation="100 100">
                 <Text Text="Pinboard 1"/>
-            </VBackgroundPanel>
+            </VBorderedPanel>
             <PinboardDraggableContainer PinboardContainer.PinLocation="200 200">
-                <VBackgroundPanel >
+                <VBorderedPanel >
                     <Button Text="Pinboard 2"/>
-                </VBackgroundPanel>
+                </VBorderedPanel>
             </PinboardDraggableContainer>
-            <VBackgroundPanel>
+            <VBorderedPanel>
                 <Text Text="Pinboard 3"/>
-            </VBackgroundPanel>
+            </VBorderedPanel>
         </PinboardContainer>
     </VGrowStack>
 </windows:ALZoo>

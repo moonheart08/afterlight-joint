@@ -6,24 +6,24 @@ using Robust.Client.UserInterface.Controls;
 namespace Content.Client._AL.UI.Widgets;
 
 [Virtual]
-public class HBar : PanelContainer, IDepthMeasure<BackgroundPanel>
+public class HBar : PanelContainer, IDepthMeasure<BorderedPanel>
 {
     protected override void StylePropertiesChanged()
     {
         base.StylePropertiesChanged();
-        ((IDepthMeasure<BackgroundPanel>)this).CheckChanges(this);
+        ((IDepthMeasure<BorderedPanel>)this).CheckChanges(this);
     }
 
     protected override void Parented(Control newParent)
     {
         base.Parented(newParent);
-        ((IDepthMeasure<BackgroundPanel>)this).CheckChanges(this);
+        ((IDepthMeasure<BorderedPanel>)this).CheckChanges(this);
     }
 
     protected override void EnteredTree()
     {
         base.EnteredTree();
-        ((IDepthMeasure<BackgroundPanel>)this).CheckChanges(this);
+        ((IDepthMeasure<BorderedPanel>)this).CheckChanges(this);
     }
 
     public HBar()

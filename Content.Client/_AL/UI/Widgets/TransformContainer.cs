@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
 
 namespace Content.Client._AL.UI.Widgets;
-
+/*
 /// <summary>
 /// Do not use, incomplete.
 /// </summary>
@@ -41,4 +41,4 @@ public class TransformContainer : Container
         base.RenderChildOverride(renderHandle, ref total, control, position, modulate, scissorBox, coordinateTransform);
         renderHandle.DrawingHandleScreen.SetTransform(oldXform);
     }
-}
+}*/

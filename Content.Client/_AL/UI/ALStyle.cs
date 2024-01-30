@@ -90,9 +90,6 @@ public sealed class ALStyle : BaseStyle
             /* Font color stuff */
             Element().Prop(Style.FontColor, SecondaryPalette[0].OrIf(cfg.HighContrastText, ContrastWhite)),
             Element().BgBrighterThan(SwitchToDarkLevel).Prop(Style.FontColor, SecondaryPalette[4].OrIf(cfg.HighContrastText, ContrastBlack)),
-            E<TransformContainer>().Identifier("TestXform")
-                .Prop(Style.TransformContainerMatrix, Matrix3.CreateRotation(Angle.FromDegrees(35)))
-                .Prop(Style.TransformContainerCenterMatrix, true),
         };
 
         Stylesheet = new(BaseRules.Concat(ourRules).ToArray());

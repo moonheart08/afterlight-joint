@@ -10,9 +10,9 @@
     <SplitContainer Orientation="Horizontal" HorizontalExpand="True" Name="Split">
         <!-- Guide select -->
         <widgets:HStack Name="TreeBox">
-            <widgets:HBackgroundPanel>
+            <widgets:HBorderedPanel>
                 <fancyTree:FancyTree Name="Tree" VerticalExpand="True" HorizontalExpand="True" Access="Public"/>
-            </widgets:HBackgroundPanel>
+            </widgets:HBorderedPanel>
             <widgets:VBar/> <!-- AL EDIT -->
         </widgets:HStack>
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">

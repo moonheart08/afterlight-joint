@@ -3,17 +3,17 @@
                      xmlns:editorUI="clr-namespace:Content.ALED.EditorUI"
                      HorizontalExpand="True"
                      VerticalExpand="True">
-    <VBackgroundPanel Name="Container">
+    <VBorderedPanel Name="Container">
         <!-- Top bar -->
-        <HBackgroundPanel Margin="0">
+        <HBorderedPanel Margin="0">
             <Button Text="File"/>
             <Button Text="Edit"/>
-        </HBackgroundPanel>
+        </HBorderedPanel>
         <HGrowStack Margin="0" VerticalExpand="True">
-            <VBackgroundPanel Margin="0 4 0 0">
+            <VBorderedPanel Margin="0 4 0 0">
                 <RichText Text="Side panel would go here"/>
-            </VBackgroundPanel>
+            </VBorderedPanel>
             <editorUI:NodeBoard/>
         </HGrowStack>
-    </VBackgroundPanel>
+    </VBorderedPanel>
 </screen:EditorScreen>
