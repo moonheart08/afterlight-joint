@@ -134,9 +134,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Roslyn", "Roslyn", "{7844DA
 		RobustToolbox\Robust.Roslyn.Shared\Robust.Roslyn.Shared.props = RobustToolbox\Robust.Roslyn.Shared\Robust.Roslyn.Shared.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.ALED", "Content.ALED\Content.ALED.csproj", "{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.AL.UIKit", "modules\Content.AL.UIKit\Content.AL.UIKit.csproj", "{87E5635E-0628-469F-96D2-BEEF600DB243}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.AL.UIKit", "Content.AL.UIKit\Content.AL.UIKit.csproj", "{46B7794F-3D7D-454F-ADDB-7A757D20EB88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -449,22 +447,14 @@ Global
 		{83F510FE-9B50-4D96-AFAB-CC13998D6AFE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{83F510FE-9B50-4D96-AFAB-CC13998D6AFE}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
 		{83F510FE-9B50-4D96-AFAB-CC13998D6AFE}.Tools|Any CPU.Build.0 = Tools|Any CPU
-		{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}.DebugOpt|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}.DebugOpt|Any CPU.Build.0 = Debug|Any CPU
-		{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}.Tools|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF1695D7-3C1C-4E62-A4B1-19C7B68504E8}.Tools|Any CPU.Build.0 = Debug|Any CPU
-		{87E5635E-0628-469F-96D2-BEEF600DB243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87E5635E-0628-469F-96D2-BEEF600DB243}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87E5635E-0628-469F-96D2-BEEF600DB243}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87E5635E-0628-469F-96D2-BEEF600DB243}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87E5635E-0628-469F-96D2-BEEF600DB243}.DebugOpt|Any CPU.ActiveCfg = Debug|Any CPU
-		{87E5635E-0628-469F-96D2-BEEF600DB243}.DebugOpt|Any CPU.Build.0 = Debug|Any CPU
-		{87E5635E-0628-469F-96D2-BEEF600DB243}.Tools|Any CPU.ActiveCfg = Debug|Any CPU
-		{87E5635E-0628-469F-96D2-BEEF600DB243}.Tools|Any CPU.Build.0 = Debug|Any CPU
+		{46B7794F-3D7D-454F-ADDB-7A757D20EB88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B7794F-3D7D-454F-ADDB-7A757D20EB88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B7794F-3D7D-454F-ADDB-7A757D20EB88}.DebugOpt|Any CPU.ActiveCfg = DebugOpt|Any CPU
+		{46B7794F-3D7D-454F-ADDB-7A757D20EB88}.DebugOpt|Any CPU.Build.0 = DebugOpt|Any CPU
+		{46B7794F-3D7D-454F-ADDB-7A757D20EB88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B7794F-3D7D-454F-ADDB-7A757D20EB88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B7794F-3D7D-454F-ADDB-7A757D20EB88}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
+		{46B7794F-3D7D-454F-ADDB-7A757D20EB88}.Tools|Any CPU.Build.0 = Tools|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
