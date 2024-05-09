@@ -66,8 +66,6 @@
     sprite: Clothing/Shoes/Boots/magboots-science.rsi
   - type: Magboots
     toggleAction: ActionToggleMagbootsSci
-  - type: StaticPrice
-    price: 400
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -112,7 +110,7 @@
     key: enum.SharedGasTankUiKey.Key
   - type: UserInterface
     interfaces:
-      - key: enum.SharedGasTankUiKey.Key
+      enum.SharedGasTankUiKey.Key:
         type: GasTankBoundUserInterface
   - type: Explosive
     explosionType: Default

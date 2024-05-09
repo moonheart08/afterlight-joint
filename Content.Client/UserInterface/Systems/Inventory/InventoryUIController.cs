@@ -12,6 +12,7 @@ using Content.Client.UserInterface.Systems.Inventory.Windows;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
+using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Storage;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -57,8 +58,8 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         if (UIManager.ActiveScreen == null)
             return;
 
-        var inventoryGui = UIManager.GetActiveUIWidget<InventoryGui>();
-        RegisterInventoryButton(inventoryGui.InventoryButton);
+        if (UIManager.GetActiveUIWidgetOrNull<InventoryGui>() is { } inventoryGui)
+            RegisterInventoryButton(inventoryGui.InventoryButton);
     }
 
     public void OnStateEntered(GameplayState state)
@@ -416,15 +417,24 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
 
         if (_strippingWindow?.InventoryButtons.GetButton(update.Name) is { } inventoryButton)
         {
-            inventoryButton.SpriteView.SetEntity(entity);
+            inventoryButton.SetEntity(entity);
             inventoryButton.StorageButton.Visible = showStorage;
         }
 
         if (_slotGroups.GetValueOrDefault(group)?.GetButton(name) is not { } button)
             return;
 
-        button.SpriteView.SetEntity(entity);
-        button.StorageButton.Visible = showStorage;
+        if (_entities.TryGetComponent(entity, out VirtualItemComponent? virtb))
+        {
+            button.SetEntity(virtb.BlockingEntity);
+            button.Blocked = true;
+        }
+        else
+        {
+            button.SetEntity(entity);
+            button.Blocked = false;
+            button.StorageButton.Visible = showStorage;
+        }
     }
 
     public bool RegisterSlotGroupContainer(ItemSlotButtonContainer slotContainer)

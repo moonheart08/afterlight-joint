@@ -14,18 +14,20 @@
   - BorgModuleMining
   - OreProcessorIndustrialMachineCircuitboard
   - OreBagOfHolding
+  - ClothingMaskWeldingGas
 
 - type: technology
   id: AdvancedPowercells
   name: research-technology-advanced-powercells
   icon:
-    sprite: Objects/Power/power_cells.rsi
-    state: high
+    sprite: Structures/Power/turbo_recharger.rsi
+    state: empty
   discipline: Industrial
   tier: 1
-  cost: 5000
+  cost: 7500
   recipeUnlocks:
   - PowerCellHigh
+  - TurboItemRechargerCircuitboard
 
 - type: technology
   id: MechanicalCompression
@@ -40,20 +42,6 @@
   - FlatpackerMachineCircuitboard
 
 - type: technology
-  id: CompactPower
-  name: research-technology-compact-power
-  icon:
-    sprite: Structures/Power/Generation/wallmount_generator.rsi
-    state: panel
-  discipline: Industrial
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-  - WallmountSubstationElectronics
-  - WallmountGeneratorElectronics
-  - WallmountGeneratorAPUElectronics
-
-- type: technology
   id: IndustrialEngineering
   name: research-technology-industrial-engineering
   icon:
@@ -65,6 +53,7 @@
   recipeUnlocks:
   - AutolatheHyperConvectionMachineCircuitboard
   - ProtolatheHyperConvectionMachineCircuitboard
+  - CircuitImprinterHyperConvectionMachineCircuitboard
   - SheetifierMachineCircuitboard
 
 - type: technology
@@ -95,7 +84,6 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - BorgModuleGasAnalyzer
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
 
@@ -118,8 +106,6 @@
   - RipleyPeripheralsElectronics
   - MechEquipmentGrabber
 
-# Tier 2
-
 - type: technology
   id: Grappling
   name: research-technology-grappling
@@ -127,11 +113,27 @@
     sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
     state: base
   discipline: Industrial
-  tier: 2
+  tier: 1
   cost: 5000
   recipeUnlocks:
   - WeaponGrapplingGun
   - BorgModuleGrapplingGun
+
+# Tier 2
+
+- type: technology
+  id: SpaceScanning
+  name: research-technology-space-scanning
+  icon:
+    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    state: icon
+  discipline: Industrial
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - RadarConsoleCircuitboard
+  - HandHeldMassScanner
+  - BorgModuleGPS
 
 - type: technology
   id: Shuttlecraft
@@ -144,7 +146,6 @@
   cost: 10000
   recipeUnlocks:
   - ShuttleConsoleCircuitboard
-  - RadarConsoleCircuitboard
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
@@ -157,10 +158,11 @@
     state: icon
   discipline: Industrial
   tier: 2
-  cost: 5000
+  cost: 7500
   recipeUnlocks:
-  - HolofanProjector
+  - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
+  - HolofanProjector
 
 - type: technology
   id: AdvancedToolsTechnology

@@ -32,12 +32,10 @@
           False: { visible: false }
   - type: FlatpackCreator
     baseMachineCost:
-      Steel: 600
-      Plastic: 200
+      Steel: 750
     baseComputerCost:
-      Steel: 600
-      Plastic: 200
-      Glass: 200
+      Steel: 500
+      Glass: 250
   - type: Machine
     board: FlatpackerMachineCircuitboard
   - type: MaterialStorage
@@ -54,17 +52,14 @@
       path: /Audio/Items/rped.ogg
   - type: WiresPanel
   - type: WiresVisuals
-  - type: Wires
-    boardName: wires-board-name-flatpacker
-    layoutId: Flatpacker
   - type: Appearance
   - type: ActivatableUI
     key: enum.FlatpackCreatorUIKey.Key
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-    - key: enum.FlatpackCreatorUIKey.Key
-      type: FlatpackCreatorBoundUserInterface
+      enum.FlatpackCreatorUIKey.Key:
+        type: FlatpackCreatorBoundUserInterface
   - type: ItemSlots
     slots:
       board_slot:
@@ -85,3 +80,13 @@
     - board_slot
   - type: StaticPrice
     price: 2000
+
+- type: entity
+  id: FlatpackerNoBoardEffect
+  categories:
+  - hideSpawnMenu
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/autolathe.rsi
+    state: icon
+    color: "#222222"
