@@ -2,6 +2,3 @@
 	path = RobustToolbox
 	url = https://github.com/space-wizards/RobustToolbox.git
 	branch = master
-[submodule "modules/Content.AL.UIKit"]
-	path = modules/Content.AL.UIKit
-	url = git@github.com:moonheart08/Content.AL.UIKit.git
