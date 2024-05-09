@@ -7,7 +7,7 @@ using Content.Client.TextScreen;
 namespace Content.Client.MachineLinking.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class SignalTimerWindow : DefaultWindow
+public sealed partial class SignalTimerWindow : Content.AL.UIKit.Widgets.Window
 {
     private const int MaxTextLength = 5;
 

@@ -1,4 +1,4 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             Title="{Loc 'comp-pda-ui-menu-title'}"
             SetSize="400 400"
             MinSize="400 400">
@@ -56,4 +56,4 @@
             </PanelContainer>
         </BoxContainer>
     </TabContainer>
-</DefaultWindow>
+</alwinpatch:Window>

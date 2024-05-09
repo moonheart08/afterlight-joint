@@ -11,7 +11,7 @@ namespace Content.Client.Disposal.UI
     /// Client-side UI used to control a <see cref="SharedDisposalRouterComponent"/>
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class DisposalRouterWindow : DefaultWindow
+    public sealed partial class DisposalRouterWindow : Content.AL.UIKit.Widgets.Window
     {
         public DisposalRouterWindow()
         {

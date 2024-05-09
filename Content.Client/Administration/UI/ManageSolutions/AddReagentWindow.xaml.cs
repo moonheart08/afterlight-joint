@@ -13,7 +13,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
     ///     cref="EditSolutionsWindow"/>
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class AddReagentWindow : DefaultWindow
+    public sealed partial class AddReagentWindow : Content.AL.UIKit.Widgets.Window
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;

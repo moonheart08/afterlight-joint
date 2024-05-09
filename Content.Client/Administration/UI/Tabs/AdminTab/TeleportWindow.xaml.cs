@@ -10,7 +10,7 @@ namespace Content.Client.Administration.UI.Tabs.AdminTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class TeleportWindow : DefaultWindow
+    public sealed partial class TeleportWindow : Content.AL.UIKit.Widgets.Window
     {
         private PlayerInfo? _selectedPlayer;
 

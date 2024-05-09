@@ -1,8 +1,7 @@
 ﻿<optionsMenu:OptionsMenuWindow xmlns:optionsMenu="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu"
-                               xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                               xmlns="https://afterlight3149.net"
+                               xmlns:decorative="clr-namespace:Content.AL.UIKit.Widgets.Decorative;assembly=Content.AL.UIKit"
                                xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
-                               xmlns:decorative="clr-namespace:Content.Client._AL.UI.Widgets.Decorative"
-                               xmlns:smart="clr-namespace:Content.Client._AL.UI.Widgets.Smart"
                                MinHeight="500"
                                MinWidth="700"
                                Title="Options"
@@ -35,7 +34,7 @@
             </ElementSet>
             <HGrowStack>
                 <HFill/>
-                <smart:ApplyButton/>
+                <ApplyButton/>
             </HGrowStack>
         </VStack>
     </HStack>

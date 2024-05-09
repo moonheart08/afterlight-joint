@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Research.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class ResearchClientServerSelectionMenu : DefaultWindow
+    public sealed partial class ResearchClientServerSelectionMenu : Content.AL.UIKit.Widgets.Window
     {
         private int _serverCount;
         private string[] _serverNames = Array.Empty<string>();

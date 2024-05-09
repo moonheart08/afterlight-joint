@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.CustomControls;
 
 namespace Content.Client.Arcade
 {
-    public sealed class SpaceVillainArcadeMenu : DefaultWindow
+    public sealed class SpaceVillainArcadeMenu : Content.AL.UIKit.Widgets.Window
     {
         public SpaceVillainArcadeBoundUserInterface Owner { get; set; }
 

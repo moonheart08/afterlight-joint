@@ -1,4 +1,4 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
+﻿<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
                xmlns:ui="clr-namespace:Content.Client.Disposal.UI"
                MinSize="300 140"
             SetSize="300 140"
@@ -39,4 +39,4 @@
                          StyleClasses="OpenLeft" />
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

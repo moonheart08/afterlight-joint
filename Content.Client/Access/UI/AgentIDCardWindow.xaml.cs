@@ -12,7 +12,7 @@ using System.Numerics;
 namespace Content.Client.Access.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class AgentIDCardWindow : DefaultWindow
+    public sealed partial class AgentIDCardWindow : Content.AL.UIKit.Widgets.Window
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;

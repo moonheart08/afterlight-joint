@@ -6,7 +6,7 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Ghost.UI;
 
-public sealed class ReturnToBodyMenu : DefaultWindow
+public sealed class ReturnToBodyMenu : Content.AL.UIKit.Widgets.Window
 {
     public readonly Button DenyButton;
     public readonly Button AcceptButton;

@@ -14,7 +14,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client.Store.Ui;
 
 [GenerateTypedNameReferences]
-public sealed partial class StoreMenu : DefaultWindow
+public sealed partial class StoreMenu : Content.AL.UIKit.Widgets.Window
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

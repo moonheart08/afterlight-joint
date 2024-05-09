@@ -11,7 +11,7 @@ namespace Content.Client.Disposal.UI
     /// Client-side UI used to control a <see cref="SharedDisposalUnitComponent"/>
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class DisposalUnitWindow : DefaultWindow
+    public sealed partial class DisposalUnitWindow : Content.AL.UIKit.Widgets.Window
     {
         public TimeSpan FullPressure;
 

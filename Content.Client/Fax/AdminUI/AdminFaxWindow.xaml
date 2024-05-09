@@ -1,4 +1,4 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
                Title="{Loc admin-fax-title}"
                MinWidth="400">
     <BoxContainer Orientation="Vertical" VerticalExpand="True">
@@ -26,4 +26,4 @@
         <Control MinHeight="10" />
         <Button Name="SendButton" Text="{Loc admin-fax-send}"></Button>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

@@ -6,7 +6,7 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Strip
 {
-    public sealed class StrippingMenu : DefaultWindow
+    public sealed class StrippingMenu : Content.AL.UIKit.Widgets.Window
     {
         public LayoutContainer InventoryContainer = new();
         public BoxContainer HandsContainer = new() { Orientation = LayoutOrientation.Horizontal };

@@ -8,7 +8,7 @@ namespace Content.Client.Administration.UI.Bwoink
     /// This window connects to a BwoinkSystem channel. BwoinkSystem manages the rest.
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class BwoinkWindow : DefaultWindow
+    public sealed partial class BwoinkWindow : Content.AL.UIKit.Widgets.Window
     {
         public BwoinkWindow()
         {

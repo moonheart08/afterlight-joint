@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Administration.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class AdminMenuWindow : DefaultWindow
+    public sealed partial class AdminMenuWindow : Content.AL.UIKit.Widgets.Window
     {
         public event Action? OnDisposed;
 

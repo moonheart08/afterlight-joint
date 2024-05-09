@@ -12,7 +12,7 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
     [GenerateTypedNameReferences]
-    public sealed partial class MakeGhostRoleWindow : DefaultWindow
+    public sealed partial class MakeGhostRoleWindow : Content.AL.UIKit.Widgets.Window
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         private readonly List<GhostRoleRaffleSettingsPrototype> _rafflePrototypes = [];

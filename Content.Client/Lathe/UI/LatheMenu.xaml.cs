@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Text;
-using Content.Client._AL.UI.Widgets;
+using Content.AL.UIKit.Widgets;
 using Content.Client.Materials;
 using Content.Shared.Lathe;
 using Content.Shared.Lathe.Prototypes;

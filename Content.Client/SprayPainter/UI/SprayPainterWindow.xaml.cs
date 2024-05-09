@@ -8,7 +8,7 @@ using Robust.Shared.Utility;
 namespace Content.Client.SprayPainter.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class SprayPainterWindow : DefaultWindow
+public sealed partial class SprayPainterWindow : Content.AL.UIKit.Widgets.Window
 {
     [Dependency] private readonly IEntitySystemManager _sysMan = default!;
     private readonly SpriteSystem _spriteSystem;

@@ -9,7 +9,7 @@ namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    internal sealed partial class ObserveWarningWindow : DefaultWindow
+    internal sealed partial class ObserveWarningWindow : Content.AL.UIKit.Widgets.Window
     {
         public ObserveWarningWindow()
         {

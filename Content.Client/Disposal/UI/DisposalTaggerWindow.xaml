@@ -1,4 +1,4 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
+﻿<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             Title="{Loc 'disposal-tagger-window-title'}"
             MinSize="500 110"
             SetSize="500 110">
@@ -16,4 +16,4 @@
                     Text="{Loc 'disposal-tagger-window-tag-confirm-button'}" />
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

@@ -1,5 +1,7 @@
-<DefaultWindow
+<widgets:Window
     xmlns="https://spacestation14.io"
+    xmlns:spawnExplosion="clr-namespace:Content.Client.Administration.UI.SpawnExplosion"
+    xmlns:widgets="https://afterlight3149.net"
     Title="{Loc 'admin-explosion-eui-title'}"
     SetHeight="380">
     <BoxContainer Name="MainContainer" Orientation="Vertical">
@@ -8,7 +10,7 @@
             <Label Text="{Loc 'admin-explosion-eui-label-type'}" MinSize="120 0" />
             <OptionButton Name="ExplosionOption" MinSize="70 0" HorizontalExpand="True" />
         </BoxContainer>
-        
+
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'admin-explosion-eui-label-mapid'}" MinSize="120 0" />
             <OptionButton Name="MapOptions" MinSize="70 0" HorizontalExpand="True" />
@@ -43,4 +45,4 @@
 
         <Button Name="Spawn" Text="{Loc 'admin-explosion-eui-label-spawn'}" />
     </BoxContainer>
-</DefaultWindow>
+</widgets:Window>

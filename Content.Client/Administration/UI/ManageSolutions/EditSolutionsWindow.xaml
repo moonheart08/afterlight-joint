@@ -1,7 +1,8 @@
-<DefaultWindow
+<widgets:Window
     SetSize="300 400"
     Margin="4 0"
-    xmlns="https://spacestation14.io">
+    xmlns="https://spacestation14.io"
+    xmlns:widgets="https://afterlight3149.net">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 4">
             <Label Text ="{Loc 'admin-solutions-window-solution-label'}" Margin="0 0 10 0"/>
@@ -26,4 +27,4 @@
 
         <Button Name="AddButton" Text="{Loc 'admin-solutions-window-add-new-button'}" HorizontalExpand="True"  Margin="0 4"/>
     </BoxContainer>
-</DefaultWindow>
+</widgets:Window>

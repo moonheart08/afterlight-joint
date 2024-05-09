@@ -15,7 +15,7 @@ namespace Content.Client.Chemistry.UI
     /// Client-side UI used to control a <see cref="ReagentDispenserComponent"/>.
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class ReagentDispenserWindow : DefaultWindow
+    public sealed partial class ReagentDispenserWindow : Content.AL.UIKit.Widgets.Window
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;

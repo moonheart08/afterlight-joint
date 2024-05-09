@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.StationRecords;
 
 [GenerateTypedNameReferences]
-public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
+public sealed partial class GeneralStationRecordConsoleWindow : Content.AL.UIKit.Widgets.Window
 {
     public Action<uint?>? OnKeySelected;
 

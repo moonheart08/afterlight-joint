@@ -20,7 +20,7 @@ using Robust.Shared.Utility;
 namespace Content.Client.Administration.UI.BanPanel;
 
 [GenerateTypedNameReferences]
-public sealed partial class BanPanel : DefaultWindow
+public sealed partial class BanPanel : Content.AL.UIKit.Widgets.Window
 {
     public event Action<string?, (IPAddress, int)?, bool, byte[]?, bool, uint, string, NoteSeverity, string[]?, bool>? BanSubmitted;
     public event Action<string>? PlayerChanged;

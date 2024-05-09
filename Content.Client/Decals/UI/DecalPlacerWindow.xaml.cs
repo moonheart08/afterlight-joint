@@ -13,7 +13,7 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 namespace Content.Client.Decals.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class DecalPlacerWindow : DefaultWindow
+public sealed partial class DecalPlacerWindow : Content.AL.UIKit.Widgets.Window
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 

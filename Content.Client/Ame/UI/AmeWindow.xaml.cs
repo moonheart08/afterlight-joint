@@ -7,7 +7,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Ame.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class AmeWindow : DefaultWindow
+    public sealed partial class AmeWindow : Content.AL.UIKit.Widgets.Window
     {
         public AmeWindow(AmeControllerBoundUserInterface ui)
         {

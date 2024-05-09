@@ -7,7 +7,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.UserInterface
 {
     [GenerateTypedNameReferences]
-    public sealed partial class StatsWindow : DefaultWindow
+    public sealed partial class StatsWindow : Content.AL.UIKit.Widgets.Window
     {
         public StatsWindow()
         {

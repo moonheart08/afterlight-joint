@@ -1,5 +1,5 @@
 ﻿<tabs:ALGraphicsTab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
-                    xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                    xmlns="https://afterlight3149.net"
                     xmlns:controls="https://spacestation14.io"
                     HorizontalExpand="True">
     <HGrowStack InnerLayoutRatio="1:2" ExpandInner="True">

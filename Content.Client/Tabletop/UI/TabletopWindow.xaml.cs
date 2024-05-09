@@ -9,7 +9,7 @@ using Robust.Shared.Maths;
 namespace Content.Client.Tabletop.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class TabletopWindow : DefaultWindow
+    public sealed partial class TabletopWindow : Content.AL.UIKit.Widgets.Window
     {
         public TabletopWindow(IEye? eye, Vector2i size)
         {

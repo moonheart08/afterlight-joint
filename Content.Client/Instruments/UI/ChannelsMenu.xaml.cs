@@ -8,7 +8,7 @@ using Robust.Shared.Timing;
 namespace Content.Client.Instruments.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class ChannelsMenu : DefaultWindow
+public sealed partial class ChannelsMenu : Content.AL.UIKit.Widgets.Window
 {
     private readonly InstrumentBoundUserInterface _owner;
 

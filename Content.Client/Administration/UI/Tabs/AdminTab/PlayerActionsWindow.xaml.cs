@@ -11,7 +11,7 @@ namespace Content.Client.Administration.UI.Tabs.AdminTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class PlayerActionsWindow : DefaultWindow
+    public sealed partial class PlayerActionsWindow : Content.AL.UIKit.Widgets.Window
     {
         private PlayerInfo? _selectedPlayer;
         private readonly Dictionary<Button, ConfirmationData> _confirmations = new();

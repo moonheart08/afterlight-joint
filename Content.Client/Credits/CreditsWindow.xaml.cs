@@ -22,7 +22,7 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 namespace Content.Client.Credits
 {
     [GenerateTypedNameReferences]
-    public sealed partial class CreditsWindow : DefaultWindow
+    public sealed partial class CreditsWindow : Content.AL.UIKit.Widgets.Window
     {
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;

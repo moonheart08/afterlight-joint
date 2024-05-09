@@ -1,4 +1,4 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
+﻿<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             Title="{Loc 'cargo-console-order-menu-title'}">
     <BoxContainer Orientation="Vertical">
         <GridContainer Columns="2">
@@ -30,4 +30,4 @@
                 Text="{Loc 'cargo-console-order-menu-submit-button'}"
                 TextAlign="Center" />
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

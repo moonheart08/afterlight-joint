@@ -9,7 +9,7 @@ namespace Content.Client.Disposal.UI
     /// Client-side UI used to control a <see cref="MailingUnitComponent"/>
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class MailingUnitWindow : DefaultWindow
+    public sealed partial class MailingUnitWindow : Content.AL.UIKit.Widgets.Window
     {
         public MailingUnitWindow()
         {

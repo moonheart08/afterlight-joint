@@ -1,8 +1,11 @@
+using Content.AL.UIKit;
 using Content.Client._AL.UI;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
+using Robust.Shared.Console;
 using Robust.Shared.IoC;
+using Robust.Shared.Toolshed;
 
 namespace Content.Client.Stylesheets
 {
@@ -30,7 +33,7 @@ namespace Content.Client.Stylesheets
             UpdateSheet();
         }
 
-        private void UpdateSheet()
+        public void UpdateSheet()
         {
             _userInterfaceManager.Stylesheet = GetCurrentSheet(ALStyleConfig.FromCVars()).Stylesheet;
         }
@@ -38,6 +41,16 @@ namespace Content.Client.Stylesheets
         public BaseStyle GetCurrentSheet(ALStyleConfig cfg)
         {
             return new ALStyle(_resourceCache, cfg);
+        }
+    }
+
+    public sealed class ALUIReloadCommand : LocalizedCommands
+    {
+        public override string Command => "alui_reload";
+
+        public override void Execute(IConsoleShell shell, string argStr, string[] args)
+        {
+            IoCManager.Resolve<StylesheetManager>().UpdateSheet();
         }
     }
 }

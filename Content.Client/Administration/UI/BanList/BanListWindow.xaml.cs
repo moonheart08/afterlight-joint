@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Administration.UI.BanList;
 
 [GenerateTypedNameReferences]
-public sealed partial class BanListWindow : DefaultWindow
+public sealed partial class BanListWindow : Content.AL.UIKit.Widgets.Window
 {
     public BanListWindow()
     {

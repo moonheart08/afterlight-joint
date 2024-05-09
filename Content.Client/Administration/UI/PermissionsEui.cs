@@ -27,7 +27,7 @@ namespace Content.Client.Administration.UI
         [Dependency] private readonly IClientAdminManager _adminManager = default!;
 
         private readonly Menu _menu;
-        private readonly List<DefaultWindow> _subWindows = new();
+        private readonly List<BaseWindow> _subWindows = new();
 
         private Dictionary<int, PermissionsEuiState.AdminRankData> _ranks =
             new();
@@ -291,7 +291,7 @@ namespace Content.Client.Administration.UI
             OpenRankEditWindow(rank);
         }
 
-        private sealed class Menu : DefaultWindow
+        private sealed class Menu : Content.AL.UIKit.Widgets.Window
         {
             private readonly PermissionsEui _ui;
             public readonly GridContainer AdminsList;
@@ -339,11 +339,9 @@ namespace Content.Client.Administration.UI
 
                 Contents.AddChild(tab);
             }
-
-            protected override Vector2 ContentsMinimumSize => new Vector2(600, 400);
         }
 
-        private sealed class EditAdminWindow : DefaultWindow
+        private sealed class EditAdminWindow : Content.AL.UIKit.Widgets.Window
         {
             public readonly PermissionsEuiState.AdminData? SourceData;
             public readonly LineEdit? NameEdit;
@@ -524,7 +522,7 @@ namespace Content.Client.Administration.UI
             }
         }
 
-        private sealed class EditAdminRankWindow : DefaultWindow
+        private sealed class EditAdminRankWindow : Content.AL.UIKit.Widgets.Window
         {
             public readonly int? SourceId;
             public readonly LineEdit NameEdit;

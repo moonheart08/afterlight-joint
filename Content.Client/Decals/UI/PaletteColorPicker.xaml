@@ -1,4 +1,4 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
+﻿<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
                Title="{Loc 'palette-color-picker-window-title'}"
                MinSize="250 500"
                SetSize="250 500">
@@ -9,4 +9,4 @@
             <OptionButton Name="Palettes"/>
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

@@ -1,4 +1,4 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
+﻿<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
                Title="{Loc 'decal-placer-window-title'}"
                MinSize="250 500"
                SetSize="250 500">
@@ -26,4 +26,4 @@
             <SpinBox Name="ZIndexSpinBox" HorizontalExpand ="True" />
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

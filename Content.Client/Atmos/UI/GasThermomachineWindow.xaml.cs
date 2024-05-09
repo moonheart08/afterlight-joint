@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Atmos.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class GasThermomachineWindow : DefaultWindow
+public sealed partial class GasThermomachineWindow : Content.AL.UIKit.Widgets.Window
 {
     public bool Active = true;
 

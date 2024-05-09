@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
     [GenerateTypedNameReferences]
-    public sealed partial class GhostRolesWindow : DefaultWindow
+    public sealed partial class GhostRolesWindow : Content.AL.UIKit.Widgets.Window
     {
         public event Action<GhostRoleInfo>? OnRoleRequestButtonClicked;
         public event Action<GhostRoleInfo>? OnRoleFollow;

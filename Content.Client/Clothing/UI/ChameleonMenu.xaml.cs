@@ -12,7 +12,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client.Clothing.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class ChameleonMenu : DefaultWindow
+public sealed partial class ChameleonMenu : Content.AL.UIKit.Widgets.Window
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;

@@ -6,4 +6,4 @@
         <Label Name="NoneLabel" Access="Public" Text="{Loc 'replay-menu-none'}" Margin="4" Visible="False"/>
         <ItemList Name="ReplayList" SelectMode="Single" VerticalExpand="True"  Margin ="4" Visible="False"/>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

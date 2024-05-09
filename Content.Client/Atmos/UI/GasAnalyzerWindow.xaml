@@ -1,5 +1,5 @@
 <widgets:Window xmlns="https://spacestation14.io"
-                xmlns:widgets="https://afterlight3129.net"
+                xmlns:widgets="https://afterlight3149.net"
                 MinSize="270 420"
                 SetSize="360 420" Title="{Loc 'gas-analyzer-window-name'}">
     <BoxContainer Orientation="Vertical" Margin="5 5 5 5">

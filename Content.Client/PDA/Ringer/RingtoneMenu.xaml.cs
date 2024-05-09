@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.Controls;
 namespace Content.Client.PDA.Ringer
 {
     [GenerateTypedNameReferences]
-    public sealed partial class RingtoneMenu : DefaultWindow
+    public sealed partial class RingtoneMenu : Content.AL.UIKit.Widgets.Window
     {
         public string[] PreviousNoteInputs = new[] { "A", "A", "A", "A", "A", "A" };
         public LineEdit[] RingerNoteInputs = default!;

@@ -30,9 +30,9 @@ public partial class ChatBox : UIWidget
         set
         {
             if (value)
-                Background.AddStyleClass("HasBackground");
+                ChatWindowPanel.AddStyleClass("HasBackground");
             else
-                Background.RemoveStyleClass("HasBackground");
+                ChatWindowPanel.RemoveStyleClass("HasBackground");
         }
     }
 

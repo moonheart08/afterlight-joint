@@ -8,7 +8,7 @@ using Content.Client.Options.UI.Tabs;
 namespace Content.Client.Options.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class OptionsMenu : DefaultWindow
+    public sealed partial class OptionsMenu : Content.AL.UIKit.Widgets.Window
     {
         public OptionsMenu()
         {

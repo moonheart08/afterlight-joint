@@ -1,4 +1,4 @@
-﻿<DefaultWindow Title="{Loc Make Ghost Role}"
+﻿<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" Title="{Loc Make Ghost Role}"
             xmlns="https://spacestation14.io">
 
     <BoxContainer Orientation="Vertical">
@@ -45,4 +45,4 @@
         </BoxContainer>
     </BoxContainer>
 
-</DefaultWindow>
+</alwinpatch:Window>

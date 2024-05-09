@@ -1,4 +1,4 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
+﻿<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             Title="Stats window"
             MinSize="600 400">
     <BoxContainer Orientation="Vertical">
@@ -8,4 +8,4 @@
             <GridContainer Name="Values"/>
         </ScrollContainer>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

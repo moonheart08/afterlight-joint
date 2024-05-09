@@ -1,5 +1,5 @@
 <widgets:Window xmlns="https://spacestation14.io"
-                xmlns:widgets="https://afterlight3129.net"
+                xmlns:widgets="https://afterlight3149.net"
                 Title="{Loc 'fax-machine-ui-window'}"
                 MinWidth="250">
     <BoxContainer Orientation="Vertical" VerticalExpand="True">

@@ -1,7 +1,8 @@
-<DefaultWindow
+<ui1:Window
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:ui="clr-namespace:Content.Client.Materials.UI"
+    xmlns:ui1="https://afterlight3149.net"
     Title="{Loc 'lathe-menu-title'}"
     MinSize="550 450"
     SetSize="750 500">
@@ -136,5 +137,4 @@
         </BoxContainer>
 
     </BoxContainer>
-
-</DefaultWindow>
+</ui1:Window>

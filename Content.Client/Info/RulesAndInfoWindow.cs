@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Client._AL.UI.Widgets;
+using Content.AL.UIKit.Widgets;
 using Content.Client.UserInterface.Systems.EscapeMenu;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;

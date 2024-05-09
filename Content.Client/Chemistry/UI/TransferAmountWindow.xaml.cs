@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Chemistry.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class TransferAmountWindow : DefaultWindow
+    public sealed partial class TransferAmountWindow : Content.AL.UIKit.Widgets.Window
     {
         public TransferAmountWindow()
         {

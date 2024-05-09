@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.MagicMirror;
 
 [GenerateTypedNameReferences]
-public sealed partial class MagicMirrorWindow : DefaultWindow
+public sealed partial class MagicMirrorWindow : Content.AL.UIKit.Widgets.Window
 {
     // MMMMMMM
     public Action<(int slot, string id)>? OnHairSelected;

@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Administration.UI.Tabs.PanicBunkerTab;
 
 [GenerateTypedNameReferences]
-public sealed partial class PanicBunkerStatusWindow : DefaultWindow
+public sealed partial class PanicBunkerStatusWindow : Content.AL.UIKit.Widgets.Window
 {
     public PanicBunkerStatusWindow()
     {

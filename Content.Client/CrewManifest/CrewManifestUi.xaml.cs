@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.CrewManifest;
 
 [GenerateTypedNameReferences]
-public sealed partial class CrewManifestUi : DefaultWindow
+public sealed partial class CrewManifestUi : Content.AL.UIKit.Widgets.Window
 {
     public CrewManifestUi()
     {

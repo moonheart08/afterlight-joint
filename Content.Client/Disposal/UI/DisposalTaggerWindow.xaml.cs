@@ -11,7 +11,7 @@ namespace Content.Client.Disposal.UI
     /// Client-side UI used to control a <see cref="SharedDisposalTaggerComponent"/>
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class DisposalTaggerWindow : DefaultWindow
+    public sealed partial class DisposalTaggerWindow : Content.AL.UIKit.Widgets.Window
     {
         public DisposalTaggerWindow()
         {

@@ -15,7 +15,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client.SurveillanceCamera.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class SurveillanceCameraMonitorWindow : DefaultWindow
+public sealed partial class SurveillanceCameraMonitorWindow : Content.AL.UIKit.Widgets.Window
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;

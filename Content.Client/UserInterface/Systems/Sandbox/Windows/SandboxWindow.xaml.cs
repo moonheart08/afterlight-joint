@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.UserInterface.Systems.Sandbox.Windows;
 
 [GenerateTypedNameReferences]
-public sealed partial class SandboxWindow : DefaultWindow
+public sealed partial class SandboxWindow : Content.AL.UIKit.Widgets.Window
 {
     public SandboxWindow()
     {

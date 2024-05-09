@@ -1,4 +1,4 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             Title="{Loc 'ghost-roles-window-title'}"
             MinSize="500 300"
             SetSize="500 300">
@@ -12,4 +12,4 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center" />
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

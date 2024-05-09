@@ -1,4 +1,4 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
+﻿<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             xmlns:power="clr-namespace:Content.Client.Power"
             Title="{Loc 'solar-control-window-title'}"
             Resizable="False">
@@ -28,5 +28,5 @@
         </GridContainer>
         <power:SolarControlNotARadar Name="NotARadar"/>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>
 

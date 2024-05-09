@@ -1,4 +1,4 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
             Title="{Loc 'nuke-user-interface-title'}"
             MinSize="256 256"
@@ -43,4 +43,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

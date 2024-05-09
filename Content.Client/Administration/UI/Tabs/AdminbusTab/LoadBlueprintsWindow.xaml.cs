@@ -12,7 +12,7 @@ namespace Content.Client.Administration.UI.Tabs.AdminbusTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class LoadBlueprintsWindow : DefaultWindow
+    public sealed partial class LoadBlueprintsWindow : Content.AL.UIKit.Widgets.Window
     {
         public LoadBlueprintsWindow()
         {

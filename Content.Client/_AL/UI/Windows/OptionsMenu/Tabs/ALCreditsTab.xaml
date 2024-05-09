@@ -1,5 +1,5 @@
 ﻿<tabs:ALCreditsTab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
-                   xmlns="clr-namespace:Content.Client._AL.UI.Widgets"
+                   xmlns="https://afterlight3149.net"
                    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
                    xmlns:credits="clr-namespace:Content.Client.Credits"
                    HorizontalExpand="True">

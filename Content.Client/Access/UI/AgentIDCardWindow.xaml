@@ -1,5 +1,6 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<widgets:Window xmlns="https://spacestation14.io"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:widgets="https://afterlight3149.net"
             Title="{Loc agent-id-menu-title}">
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
         <Label Name="CurrentName" Text="{Loc 'agent-id-card-current-name'}" />
@@ -14,4 +15,4 @@
             </GridContainer>
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</widgets:Window>

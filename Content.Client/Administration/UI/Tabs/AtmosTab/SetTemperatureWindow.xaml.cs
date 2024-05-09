@@ -15,7 +15,7 @@ namespace Content.Client.Administration.UI.Tabs.AtmosTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class SetTemperatureWindow : DefaultWindow
+    public sealed partial class SetTemperatureWindow : Content.AL.UIKit.Widgets.Window
     {
         private List<NetEntity>? _data;
 

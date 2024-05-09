@@ -1,5 +1,7 @@
-﻿<DefaultWindow
-    xmlns="https://spacestation14.io" Title="{Loc Load Blueprint}">
+﻿<widgets:Window
+    xmlns="https://spacestation14.io"
+    xmlns:widgets="https://afterlight3149.net"
+    Title="{Loc Load Blueprint}">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc Map}" MinSize="100 0" />
@@ -30,4 +32,4 @@
         <Button Name="TeleportButton" Text="{Loc Teleport to}" />
         <Button Name="ResetButton" Text="{Loc Reset to default}"></Button>
     </BoxContainer>
-</DefaultWindow>
+</widgets:Window>

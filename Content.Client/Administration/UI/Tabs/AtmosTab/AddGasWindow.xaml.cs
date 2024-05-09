@@ -13,7 +13,7 @@ namespace Content.Client.Administration.UI.Tabs.AtmosTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class AddGasWindow : DefaultWindow
+    public sealed partial class AddGasWindow : Content.AL.UIKit.Widgets.Window
     {
         private List<NetEntity>? _gridData;
         private IEnumerable<GasPrototype>? _gasData;

@@ -9,7 +9,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.UserInterface.Systems.Ghost.Controls
 {
     [GenerateTypedNameReferences]
-    public sealed partial class GhostTargetWindow : DefaultWindow
+    public sealed partial class GhostTargetWindow : Content.AL.UIKit.Widgets.Window
     {
         private List<(string, NetEntity)> _warps = new();
         private string _searchText = string.Empty;

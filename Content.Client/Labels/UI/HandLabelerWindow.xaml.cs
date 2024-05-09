@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Labels.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class HandLabelerWindow : DefaultWindow
+    public sealed partial class HandLabelerWindow : Content.AL.UIKit.Widgets.Window
     {
         public event Action<string>? OnLabelChanged;
 

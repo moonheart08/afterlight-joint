@@ -14,7 +14,7 @@ using Range = Robust.Client.UserInterface.Controls.Range;
 namespace Content.Client.Instruments.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class InstrumentMenu : DefaultWindow
+    public sealed partial class InstrumentMenu : Content.AL.UIKit.Widgets.Window
     {
         private readonly InstrumentBoundUserInterface _owner;
 

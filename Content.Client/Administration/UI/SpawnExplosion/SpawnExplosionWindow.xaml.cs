@@ -15,7 +15,7 @@ namespace Content.Client.Administration.UI.SpawnExplosion;
 
 [GenerateTypedNameReferences]
 [UsedImplicitly]
-public sealed partial class SpawnExplosionWindow : DefaultWindow
+public sealed partial class SpawnExplosionWindow : Content.AL.UIKit.Widgets.Window
 {
     [Dependency] private readonly IClientConsoleHost _conHost = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;

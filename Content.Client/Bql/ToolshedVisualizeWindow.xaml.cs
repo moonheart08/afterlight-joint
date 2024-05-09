@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.Bql;
 
 [GenerateTypedNameReferences]
-internal sealed partial class ToolshedVisualizeWindow : DefaultWindow
+internal sealed partial class ToolshedVisualizeWindow : Content.AL.UIKit.Widgets.Window
 {
     private readonly IClientConsoleHost _console;
     private readonly ILocalizationManager _loc;
@@ -18,10 +18,10 @@ internal sealed partial class ToolshedVisualizeWindow : DefaultWindow
         _console = console;
         _loc = loc;
 
+        ContentsContainer.MinSize = new(500, 700);
+
         RobustXamlLoader.Load(this);
     }
-
-    protected override Vector2 ContentsMinimumSize => new(500, 700);
 
     public void Update((string name, NetEntity entity)[] entities)
     {

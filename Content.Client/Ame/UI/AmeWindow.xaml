@@ -1,4 +1,4 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             Title="{Loc 'ame-window-title'}"
             MinSize="250 250">
     <GridContainer Columns="2">
@@ -57,4 +57,4 @@
             <Label Text=" kW" />
         </BoxContainer>
     </GridContainer>
-</DefaultWindow>
+</alwinpatch:Window>

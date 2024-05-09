@@ -1,5 +1,6 @@
-<DefaultWindow
+<widgets:Window
     xmlns="https://spacestation14.io"
+    xmlns:widgets="https://afterlight3149.net"
     Title="{Loc admin-announce-title}"
     MinWidth="500">
     <GridContainer Columns="1">
@@ -15,4 +16,4 @@
             <Button Name="AnnounceButton" Access="Public" Disabled="True" Text="{Loc admin-announce-button}" HorizontalAlignment="Center"/>
         </GridContainer>
     </GridContainer>
-</DefaultWindow>
+</widgets:Window>

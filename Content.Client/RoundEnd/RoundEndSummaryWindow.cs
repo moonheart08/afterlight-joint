@@ -9,7 +9,7 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.RoundEnd
 {
-    public sealed class RoundEndSummaryWindow : DefaultWindow
+    public sealed class RoundEndSummaryWindow : Content.AL.UIKit.Widgets.Window
     {
         private readonly IEntityManager _entityManager;
         public int RoundId;

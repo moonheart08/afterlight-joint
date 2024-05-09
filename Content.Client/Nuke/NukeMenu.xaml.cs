@@ -10,7 +10,7 @@ using Robust.Shared.Localization;
 namespace Content.Client.Nuke
 {
     [GenerateTypedNameReferences]
-    public sealed partial class NukeMenu : DefaultWindow
+    public sealed partial class NukeMenu : Content.AL.UIKit.Widgets.Window
     {
         public event Action<int>? OnKeypadButtonPressed;
         public event Action? OnClearButtonPressed;

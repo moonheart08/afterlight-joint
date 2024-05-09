@@ -1,11 +1,13 @@
 ﻿// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
+using Content.AL.UIKit;
+using Content.AL.UIKit.Sheets;
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Robust.Client.UserInterface.StylesheetHelpers;
-using static Content.Client._AL.UI.ALStylesheetHelpers;
+using static Content.AL.UIKit.ALStylesheetHelpers;
 
 namespace Content.Client._AL.UI.Sheets;
 

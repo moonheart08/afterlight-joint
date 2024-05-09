@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client.Decals.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class PaletteColorPicker : DefaultWindow
+public sealed partial class PaletteColorPicker : Content.AL.UIKit.Widgets.Window
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;

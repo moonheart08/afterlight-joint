@@ -2,19 +2,19 @@
                 xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
                 xmlns:fancyTree="clr-namespace:Content.Client.UserInterface.Controls.FancyTree"
                 xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-                xmlns:widgets="clr-namespace:Content.Client._AL.UI.Widgets"
+                xmlns:widgets1="https://afterlight3149.net"
                 SetSize="750 700"
                 MinSize="100 200"
                 Resizable="True"
                 Title="{Loc 'guidebook-window-title'}">
     <SplitContainer Orientation="Horizontal" HorizontalExpand="True" Name="Split">
         <!-- Guide select -->
-        <widgets:HStack Name="TreeBox">
-            <widgets:HBorderedPanel>
+        <widgets1:HStack Name="TreeBox">
+            <widgets1:HBorderedPanel>
                 <fancyTree:FancyTree Name="Tree" VerticalExpand="True" HorizontalExpand="True" Access="Public"/>
-            </widgets:HBorderedPanel>
-            <widgets:VBar/> <!-- AL EDIT -->
-        </widgets:HStack>
+            </widgets1:HBorderedPanel>
+            <widgets1:VBar/> <!-- AL EDIT -->
+        </widgets1:HStack>
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
             <BoxContainer Name="SearchContainer" Visible="False" HorizontalExpand="True">
                 <LineEdit

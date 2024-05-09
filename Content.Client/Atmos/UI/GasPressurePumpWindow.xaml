@@ -1,4 +1,4 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             MinSize="200 120" Title="Pressure Pump">
     <BoxContainer Orientation="Vertical" Margin="5 5 5 5" SeparationOverride="10">
@@ -19,4 +19,4 @@
             <Button Name="SetOutputPressureButton" Text="{Loc comp-gas-pump-ui-pump-set-rate}" HorizontalAlignment="Right" Disabled="True"/>
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

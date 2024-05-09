@@ -10,7 +10,7 @@ using Robust.Shared.Utility;
 namespace Content.Client.Fax.AdminUI;
 
 [GenerateTypedNameReferences]
-public sealed partial class AdminFaxWindow : DefaultWindow
+public sealed partial class AdminFaxWindow : Content.AL.UIKit.Widgets.Window
 {
     private const string StampsRsiPath = "/Textures/Objects/Misc/bureaucracy.rsi";
 

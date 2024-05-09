@@ -7,7 +7,7 @@ using Robust.Shared.Timing;
 namespace Content.Client.Instruments.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class BandMenu : DefaultWindow
+public sealed partial class BandMenu : Content.AL.UIKit.Widgets.Window
 {
     private readonly InstrumentBoundUserInterface _owner;
 

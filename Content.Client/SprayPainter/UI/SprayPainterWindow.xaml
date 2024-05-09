@@ -1,4 +1,4 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<alwinpatch:Window xmlns:alwinpatch="https://afterlight3149.net" xmlns="https://spacestation14.io"
                MinSize="500 300"
                SetSize="500 500"
                Title="{Loc 'spray-painter-window-title'}">
@@ -31,4 +31,4 @@
                       VerticalExpand="True"/>
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</alwinpatch:Window>

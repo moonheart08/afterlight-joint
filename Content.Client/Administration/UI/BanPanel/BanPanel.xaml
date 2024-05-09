@@ -1,6 +1,7 @@
-<DefaultWindow
+<widgets:Window
     xmlns="https://spacestation14.io"
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:widgets="https://afterlight3149.net"
     Title="{Loc ban-panel-title}" MinSize="350 500">
     <BoxContainer Orientation="Vertical">
         <TabContainer Name="Tabs" VerticalExpand="True">
@@ -47,4 +48,4 @@
         </TabContainer>
         <Button Name="SubmitButton" Text="{Loc ban-panel-submit}" HorizontalExpand="True" />
     </BoxContainer>
-</DefaultWindow>
+</widgets:Window>

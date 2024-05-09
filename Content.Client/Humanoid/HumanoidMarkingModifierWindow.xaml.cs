@@ -12,7 +12,7 @@ namespace Content.Client.Humanoid;
 // hack for a panel that modifies an entity's markings on demand
 
 [GenerateTypedNameReferences]
-public sealed partial class HumanoidMarkingModifierWindow : DefaultWindow
+public sealed partial class HumanoidMarkingModifierWindow : Content.AL.UIKit.Widgets.Window
 {
     public Action<MarkingSet>? OnMarkingAdded;
     public Action<MarkingSet>? OnMarkingRemoved;

@@ -1,5 +1,5 @@
 ﻿<tabs:ALUITab xmlns:tabs="clr-namespace:Content.Client._AL.UI.Windows.OptionsMenu.Tabs"
-              xmlns="https://afterlight3129.net"
+              xmlns="https://afterlight3149.net"
               xmlns:ui="clr-namespace:Content.Client._AL.UI"
               HorizontalExpand="True">
     <VGrowStack>

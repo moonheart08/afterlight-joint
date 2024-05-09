@@ -21,7 +21,7 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Arcade
 {
-    public sealed class BlockGameMenu : DefaultWindow
+    public sealed class BlockGameMenu : Content.AL.UIKit.Widgets.Window
     {
         private static readonly Color OverlayBackgroundColor = new(74, 74, 81, 180);
         private static readonly Color OverlayShadowColor = new(0, 0, 0, 83);

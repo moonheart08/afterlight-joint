@@ -11,7 +11,7 @@ using static Content.Shared.Access.Components.AccessOverriderComponent;
 namespace Content.Client.Access.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class AccessOverriderWindow : DefaultWindow
+    public sealed partial class AccessOverriderWindow : Content.AL.UIKit.Widgets.Window
     {
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

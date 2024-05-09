@@ -1,4 +1,4 @@
-﻿using Content.Client._AL.UI.Widgets;
+﻿using Content.AL.UIKit.Widgets;
 
 namespace Content.Client.UserInterface.Controls;
 

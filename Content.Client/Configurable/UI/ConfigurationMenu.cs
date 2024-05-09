@@ -11,7 +11,7 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Configurable.UI
 {
-    public sealed class ConfigurationMenu : DefaultWindow
+    public sealed class ConfigurationMenu : Content.AL.UIKit.Widgets.Window
     {
         public ConfigurationBoundUserInterface Owner { get; }
 
