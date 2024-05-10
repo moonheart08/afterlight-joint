@@ -27,8 +27,8 @@ public sealed class WindowStylesheet : BaseSubsheet
             E<TextureButton>().Class(DefaultWindow.StyleClassWindowCloseButton)
                 .Prop(TextureButton.StylePropertyTexture, WindowTextures[2]),
             E<TextureButton>().Class(DefaultWindow.StyleClassWindowCloseButton)
-                .Prop(nameof(Control.MaxWidth), 32.0f)
-                .Prop(nameof(Control.MaxHeight), 32.0f),
+                .Prop(nameof(Control.SetWidth), 32.0f)
+                .Prop(nameof(Control.SetHeight), 32.0f),
 
             E<TextureButton>().Hover().Class(DefaultWindow.StyleClassWindowCloseButton)
                 .Prop(TextureButton.StylePropertyTexture, WindowTextures[3]),

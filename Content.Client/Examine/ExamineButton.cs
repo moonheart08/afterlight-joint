@@ -18,19 +18,12 @@ public sealed class ExamineButton : ContainerButton
 {
     public const string StyleClassExamineButton = "examine-button";
 
-    public const int ElementHeight = 32;
-    public const int ElementWidth = 32;
-
-    private const int Thickness = 4;
-
     public TextureRect Icon;
 
     public ExamineVerb Verb;
 
     public ExamineButton(ExamineVerb verb)
     {
-        Margin = new Thickness(Thickness, Thickness, Thickness, Thickness);
-
         SetOnlyStyleClass(StyleClassExamineButton);
 
         Verb = verb;
@@ -44,8 +37,7 @@ public sealed class ExamineButton : ContainerButton
 
         Icon = new TextureRect
         {
-            SetWidth = ElementWidth,
-            SetHeight = ElementHeight
+            StyleClasses = { StyleClassExamineButton }
         };
 
         if (verb.Icon != null)

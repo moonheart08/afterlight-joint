@@ -65,20 +65,20 @@ public sealed class ALStyle : BaseStyle
         var ourRules = new StyleRule[]
         {
             // Margins!
-            E<Button>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<BorderedPanel>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<HBar>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<AL.UIKit.Widgets.Stack>().Prop(nameof(Control.Margin), new Thickness(4)),
-            E<Text>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<RichText>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<Grid>().Prop(nameof(Control.Margin), new Thickness(4)),
-            E<VBorderedPanel>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<HBorderedPanel>().Prop(nameof(Control.Margin), new Thickness(2)),
+            E<Button>().Margin(2),
+            E<BorderedPanel>().Margin(2),
+            E<HBar>().Margin(2),
+            E<AL.UIKit.Widgets.Stack>().Margin(4),
+            E<Text>().Margin(2),
+            E<RichText>().Margin(2),
+            E<Grid>().Margin(4),
+            E<VBorderedPanel>().Margin(2),
+            E<HBorderedPanel>().Margin(2),
             // Margins on legacy things!
-            E<Label>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<RichTextLabel>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<Robust.Client.UserInterface.Controls.Button>().Prop(nameof(Control.Margin), new Thickness(2)),
-            E<Robust.Client.UserInterface.Controls.ContainerButton>().Prop(nameof(Control.Margin), new Thickness(2)),
+            E<Label>().Margin(2),
+            E<RichTextLabel>().Margin(2),
+            E<Robust.Client.UserInterface.Controls.Button>().Margin(2),
+            E<Robust.Client.UserInterface.Controls.ContainerButton>().Margin(2),
 
             Element().Class("DepthPanel").Prop(ALStyleConsts.BackgroundPanelStyleboxes, PanelBackgrounds.Select(x => x.Extrude(WindowExtrusion)).ToArray()),
             Element().Class(ALStyleConsts.WindowBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[2]),

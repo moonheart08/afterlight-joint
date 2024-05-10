@@ -18,7 +18,7 @@ public sealed class LegacyWindows : BaseSubsheet
     {
         return new StyleRule[]
         {
-            Element<Label>().Class(DefaultWindow.StyleClassWindowTitle)
+            E<Label>().Class(DefaultWindow.StyleClassWindowTitle)
                 .Prop(ALStyleConsts.Font, origin.Font.GetFont(14, FontStack.FontKind.Bold)),
             Element().Class(DefaultWindow.StyleClassWindowPanel)
                 .Prop(PanelContainer.StylePropertyPanel, origin.PanelBackgrounds[0]),
