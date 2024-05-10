@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._AL.UI;
 using Content.Client.Shuttles.Systems;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
@@ -383,7 +384,8 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
                 {
                     HorizontalAlignment = HAlignment.Center,
                     VerticalAlignment = VAlignment.Center,
-                    PanelOverride = new StyleBoxFlat(new Color(30, 30, 34, 200)),
+                    StyleClasses = { "ShutleDockButtons" },
+                    Stylesheet = ALStyle.DisplaySheet.Stylesheet,
                     Children =
                     {
                         container,

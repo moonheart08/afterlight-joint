@@ -2,7 +2,8 @@
               HorizontalExpand="True"
               xmlns:controls="https://spacestation14.io"
               xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
-              xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls">
+              xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls"
+              xmlns:widgets="https://afterlight3149.net">
                 <ui:ShuttleNavControl Name="NavRadar"
                                  MouseFilter="Stop"
                                  VerticalAlignment="Stretch"
@@ -10,14 +11,14 @@
                                  HorizontalExpand="True"
                                  Margin="5 4 10 5"/>
                 <!-- Nav controls -->
-                <controls:BoxContainer Name="RightDisplayNav"
-                      VerticalAlignment="Top"
+                <widgets:VPanel Name="RightDisplayNav"
+                      VerticalAlignment="Stretch"
                       HorizontalAlignment="Right"
                       VerticalExpand="True"
                       MinWidth="256"
                       MaxWidth="256"
                       Margin="5 0 5 5"
-                      Orientation="Vertical">
+                      StyleClasses="TerminalDisplay">
                     <controls1:StripeBack
                         MinSize="48 48">
                         <controls:Label Name="NavDisplayLabel" Text="{controls:Loc 'shuttle-console-display-label'}"
@@ -65,5 +66,5 @@
                             Text="{controls:Loc 'shuttle-console-dock-toggle'}"
                             TextAlign="Center"
                             ToggleMode="True"/>
-                </controls:BoxContainer>
+                </widgets:VPanel>
             </controls:BoxContainer>

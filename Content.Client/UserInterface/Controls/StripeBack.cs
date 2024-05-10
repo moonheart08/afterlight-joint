@@ -6,9 +6,26 @@ namespace Content.Client.UserInterface.Controls
 {
     public sealed class StripeBack : Container
     {
+        public const string StylePropertyEdgeColor = "edge-color";
+
         private const float PadSize = 4;
         private const float EdgeSize = 2;
-        private static readonly Color EdgeColor = Color.FromHex("#525252ff");
+        private Color? _edgeColor;
+
+        public Color EdgeColor
+        {
+            get
+            {
+                if (_edgeColor is { } color)
+                    return color;
+
+                if (TryGetStyleProperty(StylePropertyEdgeColor, out Color e))
+                    return e;
+
+                return Color.FromHex("#525252ff");
+            }
+            set => _edgeColor = value;
+        }
 
         private bool _hasTopEdge = true;
         private bool _hasBottomEdge = true;

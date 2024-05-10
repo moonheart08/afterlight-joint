@@ -2,21 +2,22 @@
                HorizontalExpand="True"
                xmlns:controls="https://spacestation14.io"
                xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls"
-               xmlns:ui="clr-namespace:Content.Client.Shuttles.UI">
+               xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
+               xmlns:widgets="https://afterlight3149.net">
     <ui:ShuttleDockControl Name="DockingControl"
                        MouseFilter="Stop"
                        VerticalAlignment="Stretch"
                        VerticalExpand="True"
                        HorizontalExpand="True"
                        Margin="5 4 10 5"/>
-    <controls:BoxContainer Name="RightDisplayDock"
-                           VerticalAlignment="Top"
+    <widgets:VPanel Name="RightDisplayDock"
+                           VerticalAlignment="Stretch"
                            HorizontalAlignment="Right"
                            MinWidth="256"
                            MaxWidth="256"
-                           Align="Center"
                            Margin="5 0 5 5"
-                           Orientation="Vertical">
+                           VerticalExpand="True"
+                           StyleClasses="TerminalDisplay">
         <controls1:StripeBack MinSize="48 48">
             <controls:Label Name="DockingPortsLabel" Text="{controls:Loc 'shuttle-console-docks-label'}" HorizontalAlignment="Center"/>
         </controls1:StripeBack>
@@ -24,5 +25,5 @@
                                   ReturnMeasure="True">
             <controls:BoxContainer Name="DockPorts" Orientation="Vertical"/>
         </controls:ScrollContainer>
-    </controls:BoxContainer>
+    </widgets:VPanel>
 </controls:BoxContainer>

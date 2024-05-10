@@ -1,11 +1,10 @@
-<controls:PanelContainer HorizontalExpand="True"
+<ui:DockObject HorizontalExpand="True"
+                 xmlns="https://afterlight3149.net"
                          xmlns:controls="https://spacestation14.io"
+                         xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
                          Margin="0 3">
-    <controls:BoxContainer Name="Contents" Orientation="Vertical"
-                           Margin="3">
         <controls:Label Name="DockedLabel"
                         HorizontalAlignment="Center"
                         Margin="3 5"/>
         <controls:BoxContainer Orientation="Vertical" Name="DockContainer"/>
-    </controls:BoxContainer>
-</controls:PanelContainer>
+</ui:DockObject>

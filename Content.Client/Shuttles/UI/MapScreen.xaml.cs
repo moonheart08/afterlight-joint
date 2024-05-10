@@ -1,5 +1,8 @@
 using System.Linq;
 using System.Numerics;
+using Content.AL.UIKit;
+using Content.AL.UIKit.Widgets;
+using Content.Client._AL.UI;
 using Content.Client.Shuttles.Systems;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
@@ -20,11 +23,13 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Button = Robust.Client.UserInterface.Controls.Button;
+using ContainerButton = Robust.Client.UserInterface.Controls.ContainerButton;
 
 namespace Content.Client.Shuttles.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class MapScreen : BoxContainer
+public sealed partial class MapScreen : HGrowStack
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -76,6 +81,8 @@ public sealed partial class MapScreen : BoxContainer
         _maps = _entManager.System<SharedMapSystem>();
         _shuttles = _entManager.System<ShuttleSystem>();
         _xformSystem = _entManager.System<SharedTransformSystem>();
+
+        RightDisplayMap.Stylesheet = ALStyle.DisplaySheet.Stylesheet;
 
         MapRebuildButton.OnPressed += MapRebuildPressed;
 

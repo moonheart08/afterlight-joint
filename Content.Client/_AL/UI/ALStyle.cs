@@ -12,8 +12,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using Content.AL.UIKit;
+using Content.AL.UIKit.Colorspace;
 using Content.AL.UIKit.Widgets;
 using Content.AL.UIKit.Widgets.Smart;
+using Content.Client.UserInterface.Controls;
+using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -29,33 +32,40 @@ public sealed class ALStyle : BaseStyle
 {
     public override string FileRoot => "/Textures/_AL/Interface";
 
-    public Color ContrastWhite = Color.FromHex("#F8F8F8");
-    public Color ContrastBlack = Color.FromHex("#080808");
+    public readonly static Color ContrastWhite = Color.FromHex("#F8F8F8");
+    public readonly static Color ContrastBlack = Color.FromHex("#080808");
+    public readonly static Color PrimaryColor = Color.FromHex("#EE9705");
+    public readonly static Color PrimaryDesatColor = Color.FromHex("#e99a2d");
+    public readonly static Color SecondaryColor = Color.FromHex("#c3bdb1");
+
+    public const string DisplayStylesheet = "ALDisplayStylesheet";
+    public const string MainStylesheet = "ALMainStylesheet";
 
     public override Color[] PrimaryPalette => new[]
     {
-        Color.FromHex("#EE9705"),
-        Color.FromHex("#C37F0A"),
-        Color.FromHex("#7F560D"),
-        Color.FromHex("#4E360E"),
-        Color.FromHex("#4E360E")
+        PrimaryColor,
+        PrimaryDesatColor.WithLightness(0.70f),
+        PrimaryDesatColor.WithLightness(0.60f),
+        PrimaryColor.WithLightness(0.50f),
+        PrimaryColor.WithLightness(0.40f)
     };
 
     public override Color[] SecondaryPalette => new[]
     {
-        Color.FromHex("#DCD4C5"),
-        Color.FromHex("#BAAB99"),
-        Color.FromHex("#846F5F"),
-        Color.FromHex("#574E4D"),
-        Color.FromHex("#393838")
+        SecondaryColor,
+        SecondaryColor.WithLightness(0.65f),
+        SecondaryColor.WithLightness(0.50f),
+        SecondaryColor.WithLightness(0.35f),
+        SecondaryColor.WithLightness(0.20f),
     };
 
     public static readonly Vector2 WindowExtrusion = new(0, 3);
     public static readonly Vector2 ButtonExtrusion = new(0, 3);
     public static readonly Vector2 ButtonExtrusionPartial = new(0, 2);
     public static readonly Vector2 SliderExtrusion = new(0, 2);
+    public static BaseStyle DisplaySheet = default!;
 
-    public const float SwitchToDarkLevel = 0.8f;
+    public const float SwitchToDarkLevel = 0.72f;
 
     [SuppressMessage("ReSharper", "AccessToStaticMemberViaDerivedType")]
     public ALStyle(IResourceCache resCache, ALStyleConfig cfg) : base(resCache)
@@ -85,20 +95,20 @@ public sealed class ALStyle : BaseStyle
             Element().Class(ALStyleConsts.WindowContentsBackground).Prop(PanelContainer.StylePropertyPanel, PanelBackgrounds[0].Extrude(WindowExtrusion, modulation: extrusionMult)),
 
             /* AL's button overrides. This just extrudes them out. */
-            Button().Normal().Prop(ALStyleConsts.StyleBox, ButtonBackgrounds[2].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
-            Button().Hover().Prop(ALStyleConsts.StyleBox, ButtonBackgrounds[3].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusionPartial, modulation: extrusionMult))),
-            Button().Pressed().Prop(ALStyleConsts.StyleBox, ButtonBackgrounds[1]),
-            Button().Disabled().Prop(ALStyleConsts.StyleBox, ButtonBackgrounds[0].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
+            Button().Normal().Prop(ALStyleConsts.StyleBox, ButtonBackgrounds[2].Modulate(PrimaryPalette[1]).AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
+            Button().Hover().Prop(ALStyleConsts.StyleBox, ButtonBackgrounds[3].Modulate(PrimaryPalette[0]).AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusionPartial, modulation: extrusionMult))),
+            Button().Pressed().Prop(ALStyleConsts.StyleBox, ButtonBackgrounds[1].Modulate(PrimaryPalette[2])),
+            Button().Disabled().Prop(ALStyleConsts.StyleBox, ButtonBackgrounds[0].Modulate(PrimaryPalette[3]).AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
 
-            Button().Positive().Normal().Prop(ALStyleConsts.StyleBox, ButtonPositiveBackgrounds[2].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
-            Button().Positive().Hover().Prop(ALStyleConsts.StyleBox, ButtonPositiveBackgrounds[3].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusionPartial, modulation: extrusionMult))),
+            Button().Positive().Normal().Prop(ALStyleConsts.StyleBox, ButtonPositiveBackgrounds[2].AndIf<StyleBox>(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
+            Button().Positive().Hover().Prop(ALStyleConsts.StyleBox, ButtonPositiveBackgrounds[3].AndIf<StyleBox>(cfg.UseDepth, x => x.Extrude(ButtonExtrusionPartial, modulation: extrusionMult))),
             Button().Positive().Pressed().Prop(ALStyleConsts.StyleBox, ButtonPositiveBackgrounds[1]),
-            Button().Positive().Disabled().Prop(ALStyleConsts.StyleBox, ButtonPositiveBackgrounds[0].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
+            Button().Positive().Disabled().Prop(ALStyleConsts.StyleBox, ButtonPositiveBackgrounds[0].AndIf<StyleBox>(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
 
-            Button().Negative().Normal().Prop(ALStyleConsts.StyleBox, ButtonNegativeBackgrounds[2].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
-            Button().Negative().Hover().Prop(ALStyleConsts.StyleBox, ButtonNegativeBackgrounds[3].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusionPartial, modulation: extrusionMult))),
+            Button().Negative().Normal().Prop(ALStyleConsts.StyleBox, ButtonNegativeBackgrounds[2].AndIf<StyleBox>(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
+            Button().Negative().Hover().Prop(ALStyleConsts.StyleBox, ButtonNegativeBackgrounds[3].AndIf<StyleBox>(cfg.UseDepth, x => x.Extrude(ButtonExtrusionPartial, modulation: extrusionMult))),
             Button().Negative().Pressed().Prop(ALStyleConsts.StyleBox, ButtonNegativeBackgrounds[1]),
-            Button().Negative().Disabled().Prop(ALStyleConsts.StyleBox, ButtonNegativeBackgrounds[0].AndIf(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
+            Button().Negative().Disabled().Prop(ALStyleConsts.StyleBox, ButtonNegativeBackgrounds[0].AndIf<StyleBox>(cfg.UseDepth, x => x.Extrude(ButtonExtrusion, modulation: extrusionMult))),
             Element<HBar>().Prop(ALStyleConsts.BarStyleboxes, SecondarySolidBackgrounds[0..4].ToArray()),
 
             /* Sliders */
@@ -117,9 +127,16 @@ public sealed class ALStyle : BaseStyle
             /* Font color stuff */
             Element().Prop(ALStyleConsts.FontColor, SecondaryPalette[0].OrIf(cfg.HighContrastText, ContrastWhite)),
             Element().BgBrighterThan(SwitchToDarkLevel).Prop(ALStyleConsts.FontColor, SecondaryPalette[4].OrIf(cfg.HighContrastText, ContrastBlack)),
+
+            E<VPanel>().Class("TerminalDisplay")
+                .Prop(PanelContainer.StylePropertyPanel, ButtonBackgrounds[0].Modulate(Color.FromHex("#111111"))),
+
+            /* Alternate stylesheets */
+            Element().Prop(MainStylesheet, this),
         };
 
         Stylesheet = new(BaseRules.Concat(ourRules).ToArray());
+        DisplaySheet = new DisplayStyle(resCache, this);
     }
 
     public override Stylesheet Stylesheet { get; }
